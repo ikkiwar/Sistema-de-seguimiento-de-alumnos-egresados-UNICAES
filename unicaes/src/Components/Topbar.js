@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from '../Images/logo_u.png';
 import "./Styles/Topbar.css";
+import { Link } from "react-router-dom";
 
 
 class Topbar extends React.Component {
@@ -16,7 +17,9 @@ class Topbar extends React.Component {
         </div>
         
         <div className = "unirse">
-          <button type="button" class="btn btn-outline-warning"> Registarse</button>
+         
+            <Link to= "/Registro" class="btn btn-outline-warning"> ¡Registarse!</Link>
+            
         </div>
 
       </div>
