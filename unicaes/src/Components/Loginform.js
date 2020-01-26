@@ -28,7 +28,7 @@ class Loginform extends React.Component {
                             Recordarme</label>
                     </div>
                     <div><a href="#" class="alert-link"> ¿Olvidaste tu contraseña? </a></div>
-
+<br />
 
                     <button type="submit" class="btn btn-primary btn-block" >Iniciar Sesión</button>
                 </form>

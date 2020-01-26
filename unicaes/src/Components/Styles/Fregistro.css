@@ -1,0 +1,23 @@
+.fregistro{
+    position: absolute;
+    width: 600px;
+    height: 900px;
+        background: #fff;
+        padding: 40px;
+        padding-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px 0px #000;
+        right: 25%;
+        top: 230px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+    }
+    .salu2{
+        
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 30px;
+      text-align: center;
+        padding-bottom: 20px;
+    }
+
+    
