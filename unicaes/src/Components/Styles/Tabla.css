@@ -1,0 +1,17 @@
+.tabla{
+    position: absolute;
+    top: 260px;
+    left: 10%;
+    font-family: Arial;
+    
+
+    }
+
+    .datos{
+    
+        top: 50px;
+        width: 180%;
+        background-color: white !important;
+    }
+
+
