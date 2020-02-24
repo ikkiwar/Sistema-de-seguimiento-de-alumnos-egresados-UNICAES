@@ -1,6 +1,7 @@
 import React from 'react';
 import Tabla from '../Components/Tabla';
 import Finstituciones from '../Components/Finstituciones';
+import Navbar from '../Components/Navbar';
 import '../Components/Styles/Instituciones.css';
 class Instituciones extends React.Component{
 
@@ -39,9 +40,12 @@ class Instituciones extends React.Component{
         return(
             <div  className="instituciones" >
                 <style>{'body { background-color: #9E2723; }'}</style>
+             <Navbar/>
              <Finstituciones/>
-
+             <div className="Itabla">
              <Tabla columnas = {encabezado} />
+             </div>
+             
              
             
             </div>
