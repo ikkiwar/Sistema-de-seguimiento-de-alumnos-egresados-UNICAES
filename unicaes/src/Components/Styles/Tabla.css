@@ -4,14 +4,17 @@
     left: 10%;
     font-family: Arial;
     
+    
 
     }
 
     .datos{
-    
+        background-color: white;
         top: 50px;
         width: 180%;
-        background-color: white !important;
+    
+       
+        
     }
 
 

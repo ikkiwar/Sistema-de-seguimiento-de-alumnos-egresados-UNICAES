@@ -1,7 +1,8 @@
 import React from 'react';
-import ReacTable from "react-table-6";
-import 'react-table-6/react-table.css';
+import ReactTable from "react-table";
+import 'react-table/react-table.css';
 import '../Components/Styles/Tabla.css';
+import Api from '../Api';
 
 class Tabla extends React.Component {
 
@@ -14,7 +15,7 @@ class Tabla extends React.Component {
          };
        }
      
-      /* componentDidMount() {
+       componentDidMount() {
          // este es un estado del ciclo de via de React se ejecuta cuando se carga la pagina
          fetch(`${Api}${this.props.entidad}`, {
            // aqui le pasamos el URL y la entidad que vamos a comsumir
@@ -24,26 +25,26 @@ class Tabla extends React.Component {
            .then(posts => {
              this.setState({
                posts: posts
+               
              });
            });
-       } */
+           
+       } 
 
     render() {
-
+      console.log(this.state.posts);
         return (
             <div className="tabla">
-             
-
-             <ReacTable
+             <ReactTable
                     columns={this.props.columnas}
-                    //data={this.state.posts}
+                    data={this.state.posts}
                     filterable
                     noDataText={"Datos No encontrados"}
                     defaultPageSize={5}
                     className="datos"
                 >
  
-                </ReacTable>
+                </ReactTable>
               
 
             </div>
