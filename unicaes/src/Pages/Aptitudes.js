@@ -2,6 +2,7 @@ import React from 'react';
 import Faptitudes from '../Components/Faptitudes';
 import Navbar from '../Components/Navbar';
 import Tabla from '../Components/Tabla';
+import '../Components/Styles/Aptitudes.css';
 
 class Aptitudes extends React.Component{
 
@@ -10,7 +11,8 @@ class Aptitudes extends React.Component{
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId",
+                accessor: "userId"
+                
                 
             },
             {
@@ -18,11 +20,7 @@ class Aptitudes extends React.Component{
                 accessor: "id"
             },
 
-            {
-                Header: "Acciones",
-                accessor: "title"
-                
-            },
+          
             {
                 Header: "Acciones",
                 Cell: props => {
@@ -33,9 +31,7 @@ class Aptitudes extends React.Component{
                   minWidth: 100,
                   filterable: false,
                   sortable: false,
-                  style: {
-                    textAlign: "center"
-                  }
+                 
                 
             }
 
@@ -43,11 +39,15 @@ class Aptitudes extends React.Component{
 
         ];
         return(
-            <div>
+            <div className="aptitudes">
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <Navbar/>
+                <br/>
                 <Faptitudes/>
+                <div className="Aptabla">
                 <Tabla entidad="/posts" columnas={encabezado} />
+                </div>
+                
             </div>
         )
     }

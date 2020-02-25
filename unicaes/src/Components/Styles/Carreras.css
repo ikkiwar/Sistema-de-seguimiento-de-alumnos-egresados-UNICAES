@@ -1,0 +1,10 @@
+.Carreras{
+    text-align: center;
+    color: white;
+}
+.CaTabla{
+    position: absolute;
+    top: 10px;
+    margin-left: 150px;
+    width: 80%;
+}

@@ -9,30 +9,37 @@ class Instituciones extends React.Component{
         const encabezado = [
             {
                 Header: "#",
-                Accesor: "numero"
+                accessor: "userId"
             },
             {
                 Header: "Nombre",
-                Accesor: "numero"
+                accessor: "id"
             },
 
             {
                 Header: "Direccion",
-                Accesor: "numero"
+                accessor: "title"
             },
             {
                 Header: "Departamento",
-                Accesor: "numero"
+                accessor: "body"
             }
             ,
 
             {
                 Header: "Municipio",
-                Accesor: "numero"
+                accessor: "municipio"
             },
             {
                 Header: "Acciones",
-                Accesor: "numero"
+                Cell: props => {
+                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                  },
+                  width: 100,
+                  maxWidth: 100,
+                  minWidth: 100,
+                  filterable: false,
+                  sortable: false
             }
 
 
@@ -41,9 +48,10 @@ class Instituciones extends React.Component{
             <div  className="instituciones" >
                 <style>{'body { background-color: #9E2723; }'}</style>
              <Navbar/>
+             <br/>
              <Finstituciones/>
              <div className="Itabla">
-             <Tabla columnas = {encabezado} />
+             <Tabla entidad="/posts" columnas = {encabezado} />
              </div>
              
              

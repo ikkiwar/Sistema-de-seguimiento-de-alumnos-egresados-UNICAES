@@ -1,0 +1,11 @@
+.Tipos{
+    text-align: center;
+    color: white;
+}
+
+.TTabla{
+    position: absolute;
+    top: -40px;
+    margin-left: 150px;
+    width: 80%;
+}

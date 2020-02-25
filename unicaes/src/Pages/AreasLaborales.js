@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '../Components/Navbar';
 import Tabla from '../Components/Tabla';
 import Fareas from '../Components/Fareas';
+import '../Components/Styles/AreasLaborales.css';
 class AreasLaborales extends React.Component {
 
     render() {
@@ -9,15 +10,34 @@ class AreasLaborales extends React.Component {
         const encabezado = [
             {
                 Header: "#",
-                Accesor: "numero"
+                accessor: "userId"
+                ,
+                style: {
+                    textAlign: "center"
+                  }
             },
             {
                 Header: "Área Laboral",
-                Accesor: "numero"
+                accessor: "id"
+                ,
+                style: {
+                    textAlign: "center"
+                  }
             },
 
             {
                 Header: "Acciones",
+                Cell: props => {
+                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                  },
+                  width: 100,
+                  maxWidth: 100,
+                  minWidth: 100,
+                  filterable: false,
+                  sortable: false,
+                  style: {
+                    textAlign: "center"
+                  }
                 
             }
 
@@ -25,11 +45,15 @@ class AreasLaborales extends React.Component {
         ]
 
         return (
-            <div>
+            <div className="areas">
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <Navbar />
+                <br/>
                 <Fareas/>
-                <Tabla columnas={encabezado}/>
+                <div className="Artabla">
+                <Tabla entidad="/posts" columnas={encabezado}/>
+                </div>
+                
 
 
             </div>

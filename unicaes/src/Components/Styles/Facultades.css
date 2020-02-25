@@ -1,0 +1,11 @@
+.Facultades{
+    text-align: center;
+    color: white;
+}
+
+.FaTabla{
+    position: absolute;
+    top: -40px;
+    margin-left: 150px;
+    width: 80%;
+}

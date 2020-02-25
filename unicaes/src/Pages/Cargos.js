@@ -10,16 +10,23 @@ class Cargos extends React.Component {
         const encabezado = [
             {
                 Header: "#",
-                Accesor: "numero"
+                accessor: "userId"
             },
             {
                 Header: "Cargo",
-                Accesor: "numero"
+                accessor: "id"
             },
 
             {
                 Header: "Acciones",
-                Accesor: "numero"
+                Cell: props => {
+                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                  },
+                  width: 100,
+                  maxWidth: 100,
+                  minWidth: 100,
+                  filterable: false,
+                  sortable: false
             }
 
 
@@ -32,7 +39,7 @@ class Cargos extends React.Component {
                <br/>
                     <Fcargos />
                     <div className="Ctabla">
-                    <Tabla columnas={encabezado} />
+                    <Tabla  entidad="/posts" columnas={encabezado} />
                     </div>
                     
                
