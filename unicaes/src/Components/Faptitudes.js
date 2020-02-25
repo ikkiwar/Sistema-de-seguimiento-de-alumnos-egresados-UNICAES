@@ -4,30 +4,30 @@ class Faptitudes extends React.Component{
 render(){
     return(
     <div>
-         <div class="container-fluid row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <p class="h3" >Lista de Aptitudes</p>
+         <div className="container-fluid row">
+        <div className="col-4"></div>
+        <div className="col-4">
+            <p className="h3" >Lista de Aptitudes</p>
         </div>
-        <div class="col-4"></div>
+        <div className="col-4"></div>
     </div>
     <br />
  <form name="nuevaAptitud" method="POST">
-        <div class="container">
-            <div class="container-fluid row d-flex p-2 bd-highlight border border-warning">
-                <div class="col-1"></div>
-                <div class="col-5">
-                    <label for="txtAptitud">Nueva Aptitud:</label>
+        <div className="container">
+            <div className="container-fluid row d-flex p-2 bd-highlight border border-warning">
+                <div className="col-1"></div>
+                <div className="col-5">
+                    <label htmlFor="txtAptitud">Nueva Aptitud:</label>
                     <br />
-                    <input type="text" class="form-control" name="txtAptitud" 
+                    <input type="text" className="form-control" name="txtAptitud" 
                     placeholder="Ej. Responsabilidad" />
                 </div>
-                <div class="col-5">
+                <div className="col-5">
                     <label>&nbsp;</label>
                     <br />
-                    <input class="btn btn-primary" type="submit" value="Registrar"/>
+                    <input className="btn btn-primary" type="submit" value="Registrar"/>
                 </div>
-                <div class="col-2"></div>
+                <div className="col-2"></div>
             </div>
         </div>
           

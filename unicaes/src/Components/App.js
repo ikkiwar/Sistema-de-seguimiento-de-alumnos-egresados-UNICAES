@@ -18,7 +18,7 @@ import EditarPerfil from '../Pages/EditarPerfil';
 function App(){
 return(
 <BrowserRouter>
-<switch>
+<Switch>
     <Route exact path="/Login"  component={Login}></Route>
     <Route exact path="/Registro"  component={Registro}></Route>
     <Route exact path="/Instituciones"  component={Instituciones}></Route>
@@ -31,7 +31,7 @@ return(
     <Route exact path="/TipodeCareras"  component={TipodeCarrera}></Route>
     <Route exact path="/Perfil"  component={Perfil}></Route>
     <Route exact path="/AEditarPerfil "  component={EditarPerfil}></Route>
-</switch>
+</Switch>
 </BrowserRouter>
 );
 

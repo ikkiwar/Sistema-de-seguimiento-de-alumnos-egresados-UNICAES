@@ -26,7 +26,7 @@ class Aptitudes extends React.Component{
             {
                 Header: "Acciones",
                 Cell: props => {
-                    return <button type="button" class="btn btn-warning">Detalle</button>;
+                    return <button type="button" className="btn btn-warning">Detalle</button>;
                   },
                   width: 100,
                   maxWidth: 100,
