@@ -97,7 +97,7 @@ class Fregistro extends React.Component {
                                 <label for="txtSexo">Sexo:</label>
                             </div>
                             <div class="col-8">
-                                <select class="dropdown-toggle" class="form-control">
+                                <select class="dropdown-toggle form-control">
                                     <option value="F">F</option>
                                     <option value="M">M</option>
                                 </select>

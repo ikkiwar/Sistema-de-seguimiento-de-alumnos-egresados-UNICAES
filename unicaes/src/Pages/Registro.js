@@ -1,6 +1,6 @@
 import React from 'react';
 import Fregistro from '../Components/Fregistro';
-import Imagen from '../Components/Imagenes';
+// import Imagen from '../Components/Imagenes';
 import '../Components/Styles/Registro.css';
 import  Logo from '../Images/logo_u.png';
 class Registro extends React.Component {
@@ -10,7 +10,7 @@ class Registro extends React.Component {
         return(
             <div className="fondo">
                 <div className="simbolo">
-                <img src={Logo}  className="simbolo" />
+                <img src={Logo}  className="simbolo" alt=""/>
                 </div>
                 <Fregistro/>
             </div>

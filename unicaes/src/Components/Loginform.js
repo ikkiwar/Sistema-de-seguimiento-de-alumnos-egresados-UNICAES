@@ -27,7 +27,8 @@ class Loginform extends React.Component {
                         <label class="form-check-label" for="exampleCheck1">
                             Recordarme</label>
                     </div>
-                    <div><a href="#" class="alert-link"> ¿Olvidaste tu contraseña? </a></div>
+                    {/**Mientras se crea la logica de cambiar contrasenias redirige a Login*/}
+                    <div><a href="/Login" class="alert-link"> ¿Olvidaste tu contraseña? </a></div>
 <br />
 
                     <button type="submit" class="btn btn-primary btn-block" >Iniciar Sesión</button>

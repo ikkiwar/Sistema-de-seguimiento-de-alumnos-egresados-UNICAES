@@ -7,7 +7,7 @@ class Imagenes extends React.Component{
 
     return(
         <div >
-        <img src={this.props.imagen}  className="Imagenes" />
+        <img src={this.props.imagen}  className="Imagenes" alt=""/>
         </div>
                 
             )

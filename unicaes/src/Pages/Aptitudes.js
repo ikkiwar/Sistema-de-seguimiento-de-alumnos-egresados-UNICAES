@@ -10,17 +10,17 @@ class Aptitudes extends React.Component{
         const encabezado = [
             {
                 Header: "#",
-                Accessor: "userId",
+                accessor: "userId",
                 
             },
             {
                 Header: "Aptitud",
-                Accessor: "id"
+                accessor: "id"
             },
 
             {
                 Header: "Acciones",
-                Accessor: "title"
+                accessor: "title"
                 
             },
             {

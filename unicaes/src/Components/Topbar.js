@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../Images/logo_u.png';
 import "./Styles/Topbar.css";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 class Topbar extends React.Component {
@@ -12,7 +12,7 @@ class Topbar extends React.Component {
 
         <div className="top-bar-letter">
 
-          <img src={Logo} className="icono" />
+          <img src={Logo} className="icono" alt=""/>
           &nbsp; UNICAES
         </div>
         
