@@ -3,13 +3,15 @@ import "./Styles/Fregistro.css"
 
 class Fregistro extends React.Component {
 
+    
+
     render() {
         return (
 
             <div className="fregistro">
                 <h3 className="salu2">¡Forma parte de nuestra grandiosa red!</h3>
                 <div >
-                    <form method="POST">
+                    <form method="POST" >
                         <div class="row" >
                             <div class="col-3" >
                             <label for="txtUsuario">Usuario:</label>

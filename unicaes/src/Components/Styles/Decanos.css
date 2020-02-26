@@ -6,6 +6,7 @@
 .Dtabla{
     position: absolute;
     top: -40px;
-    margin-left: 10px;
+    margin-left: -40px;
     width: 80%;
+   
 }

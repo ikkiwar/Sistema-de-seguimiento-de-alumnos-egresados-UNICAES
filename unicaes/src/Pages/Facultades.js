@@ -10,11 +10,11 @@ class Facultades extends React.Component {
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId"
+                accessor: "id"
             },
             {
                 Header: "Facultad",
-                accessor: "id"
+                accessor: "facultad"
             },
 
             {
@@ -36,7 +36,7 @@ class Facultades extends React.Component {
                 <br />
                 <Ffacultades />
                 <div className="FaTabla">
-                    <Tabla entidad="/posts" columnas={encabezado} />
+                    <Tabla entidad="/facultades" columnas={encabezado} />
                     </div>
 
             </div>

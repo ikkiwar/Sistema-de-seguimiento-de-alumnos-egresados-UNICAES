@@ -11,13 +11,13 @@ class Aptitudes extends React.Component{
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId"
+                accessor: "idaptitud"
                 
                 
             },
             {
                 Header: "Aptitud",
-                accessor: "id"
+                accessor: "aptitud"
             },
 
           
@@ -43,9 +43,9 @@ class Aptitudes extends React.Component{
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <Navbar/>
                 <br/>
-                <Faptitudes/>
+                <Faptitudes entidad="/aptitudes"/>
                 <div className="Aptabla">
-                <Tabla entidad="/posts" columnas={encabezado} />
+                <Tabla entidad="/aptitudes" columnas={encabezado} />
                 </div>
                 
             </div>

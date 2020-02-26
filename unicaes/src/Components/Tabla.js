@@ -29,9 +29,11 @@ class Tabla extends React.Component {
         posts: posts
         });
     });
+    
   }
 
   render() {
+    console.log(this.state.posts);
     return (
       <div className="tabla">
         <ReactTable

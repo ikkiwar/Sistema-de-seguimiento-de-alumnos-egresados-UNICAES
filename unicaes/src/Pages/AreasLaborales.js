@@ -10,19 +10,13 @@ class AreasLaborales extends React.Component {
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId"
-                ,
-                style: {
-                    textAlign: "center"
-                  }
+                accessor: "idArea"
+              
             },
             {
                 Header: "Área Laboral",
-                accessor: "id"
-                ,
-                style: {
-                    textAlign: "center"
-                  }
+                accessor: "area"
+               
             },
 
             {
@@ -51,7 +45,7 @@ class AreasLaborales extends React.Component {
                 <br/>
                 <Fareas/>
                 <div className="Artabla">
-                <Tabla entidad="/posts" columnas={encabezado}/>
+                <Tabla entidad="/areaslaborales" columnas={encabezado}/>
                 </div>
                 
 

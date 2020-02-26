@@ -10,11 +10,11 @@ class Cargos extends React.Component {
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId"
+                accessor: "idcargo"
             },
             {
                 Header: "Cargo",
-                accessor: "id"
+                accessor: "cargo"
             },
 
             {
@@ -39,7 +39,7 @@ class Cargos extends React.Component {
                <br/>
                     <Fcargos />
                     <div className="Ctabla">
-                    <Tabla  entidad="/posts" columnas={encabezado} />
+                    <Tabla  entidad="/cargos" columnas={encabezado} />
                     </div>
                     
                

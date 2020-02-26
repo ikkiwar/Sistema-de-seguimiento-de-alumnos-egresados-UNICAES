@@ -9,20 +9,24 @@ class Instituciones extends React.Component{
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId"
+                accessor: "idinstitucion"
+                ,
+                  width: 100,
+                  maxWidth: 100,
+                  minWidth: 100
             },
             {
                 Header: "Nombre",
-                accessor: "id"
+                accessor: "nombre"
             },
 
             {
                 Header: "Direccion",
-                accessor: "title"
+                accessor: "direccion"
             },
             {
                 Header: "Departamento",
-                accessor: "body"
+                accessor: "departamento"
             }
             ,
 
@@ -51,7 +55,7 @@ class Instituciones extends React.Component{
              <br/>
              <Finstituciones/>
              <div className="Itabla">
-             <Tabla entidad="/posts" columnas = {encabezado} />
+             <Tabla entidad="/instituciones" columnas = {encabezado} />
              </div>
              
              

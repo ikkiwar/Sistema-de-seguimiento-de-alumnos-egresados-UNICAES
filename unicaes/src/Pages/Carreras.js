@@ -9,14 +9,22 @@ class Carreras extends React.Component {
     render() {
         const encabezado = [
             {
-                Header: "#",
-                accessor: "userId"
+                Header: "Carrera",
+                accessor: "carrera"
+            },    
+        
+            {
+                Header: "Facultad",
+                accessor: "facultad",
+                width: 300,
+                maxWidth: 100,
+                minWidth: 100
+                    
             },
             {
-                Header: "Cargo",
-                accessor: "id"
+                Header: "Tipo",
+                accessor: "tipocarrera"
             },
-
             {
                 Header: "Acciones",
                 Cell: props => {
@@ -38,7 +46,7 @@ class Carreras extends React.Component {
                 <br/>
                 <Fcarreras/> 
                 <div className="CaTabla">
-                <Tabla entidad="/posts" columnas={encabezado} />
+                <Tabla entidad="/carreras" columnas={encabezado} />
                 </div>
                
 

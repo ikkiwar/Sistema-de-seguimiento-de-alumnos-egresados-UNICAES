@@ -28,7 +28,7 @@ return(
     <Route exact path="/Carreras"  component={Carreras}></Route>
     <Route exact path="/Decanos"  component={Decanos}></Route>
     <Route exact path="/Facultades"  component={Facultades}></Route>
-    <Route exact path="/TipodeCareras"  component={TipodeCarrera}></Route>
+    <Route exact path="/TipodeCarreras"  component={TipodeCarrera}></Route>
     <Route exact path="/Perfil"  component={Perfil}></Route>
     <Route exact path="/AEditarPerfil "  component={EditarPerfil}></Route>
 </Switch>
