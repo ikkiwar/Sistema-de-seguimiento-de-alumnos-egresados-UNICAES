@@ -43,7 +43,7 @@ class AreasLaborales extends React.Component {
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <Navbar />
                 <br/>
-                <Fareas/>
+                <Fareas entidad="/areaslaborales"/>
                 <div className="Artabla">
                 <Tabla entidad="/areaslaborales" columnas={encabezado}/>
                 </div>

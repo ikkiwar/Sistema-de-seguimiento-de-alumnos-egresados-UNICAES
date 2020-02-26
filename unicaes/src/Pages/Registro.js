@@ -12,7 +12,7 @@ class Registro extends React.Component {
                 <div className="simbolo">
                 <img src={Logo}  className="simbolo" alt=""/>
                 </div>
-                <Fregistro/>
+                <Fregistro entidad="/usuarios"/>
             </div>
         )
 

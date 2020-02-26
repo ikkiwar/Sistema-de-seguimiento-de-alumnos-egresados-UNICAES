@@ -37,7 +37,7 @@ class Cargos extends React.Component {
                 <style>{'body { background-color: #9E2723; }'}</style>
                <Navbar/>
                <br/>
-                    <Fcargos />
+                    <Fcargos entidad="/cargos" />
                     <div className="Ctabla">
                     <Tabla  entidad="/cargos" columnas={encabezado} />
                     </div>
