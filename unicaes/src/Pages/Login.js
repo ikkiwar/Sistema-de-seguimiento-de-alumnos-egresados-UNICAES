@@ -14,7 +14,7 @@ class Login extends React.Component {
         return (
             <div>
                 <Topbar />
-                <Loginform />
+                <Loginform entidad="/login"/>
                 <div className="mensaje">
                     <h1>¡Se bienvenido a tu comunidad de profesionales UNICAES!</h1>
                 </div>

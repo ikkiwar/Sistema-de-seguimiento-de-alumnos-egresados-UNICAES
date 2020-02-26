@@ -8,6 +8,7 @@ class Faptitudes extends React.Component{
     handleSubmit = async e =>{
        e.preventDefault()
         console.log(this.state)
+       
 
         try {
             let confing = {
@@ -27,6 +28,8 @@ class Faptitudes extends React.Component{
         } catch (error) {
             
         }
+
+        window.location.replace('');
 
     }
 
@@ -58,7 +61,7 @@ render(){
                     <input type="text" className="form-control" name="aptitud" 
                     placeholder="Ej. Responsabilidad"
                     onChange={this.handleChange}
-                    value={this.state.txtAptitud}
+                    value={this.state.aptitud}
                     />
                 </div>
                 <div className="col-5">

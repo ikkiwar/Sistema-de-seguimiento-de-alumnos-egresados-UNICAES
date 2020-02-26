@@ -16,7 +16,7 @@ class Loginform extends React.Component {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
-                    'Conent-Type': 'application/json'
+                    'Content-Type': 'application/json'
                 },
 
                 body: JSON.stringify(this.state)
@@ -51,11 +51,11 @@ class Loginform extends React.Component {
                 <form onSubmit={this.handleSubmit}>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Correo Electrónico</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1"
+                        <input type="text" class="form-control" id="exampleInputEmail1"
                             aria-describedby="emailHelp"
-                            name="correo"
+                            name="usuario"
                             onChange={this.handleChange}
-                            value={this.state.correo}
+                            value={this.state.usuario}
                         />
 
                     </div>
@@ -63,9 +63,9 @@ class Loginform extends React.Component {
                         <label for="exampleInputPassword1">Contraseña</label>
                         <input type="password" class="form-control"
                             id="exampleInputPassword1"
-                            name="contraseña"
+                            name="contrasena"
                             onChange={this.handleChange}
-                            value={this.state.contraseña}
+                            value={this.state.contrasena}
                         />
                     </div>
                     <div class="form-group form-check">
