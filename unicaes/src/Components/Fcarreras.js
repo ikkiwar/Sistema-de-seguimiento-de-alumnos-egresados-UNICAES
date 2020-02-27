@@ -101,7 +101,7 @@ return(
                 <div class="col-5">
                     <label for="cmbTipo">Tipo:</label>
                     <br />
-                    <Ddlist entidad="/facultades" className="dd" name="cmbTipo" setValue={tiposcarrera} />
+                    <Ddlist className="dd" setValue={tiposcarrera} />
 
                 </div>
                 <div class="col-1"></div>
@@ -109,7 +109,7 @@ return(
                 <div class="col-5">
                     <label for="cmbFacultad">Facultad:</label>
                     <br />
-                    <Ddlist className="dd" name="cmbFacultad" setValue={facultades} />
+                    <Ddlist className="dd" setValue={facultades} />
                 </div>
                 <div class="col-5">
                     <label>&nbsp;</label>

@@ -9,13 +9,17 @@ class Ddlist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-        posts: [],
+      selectedOption: '',
+      posts: [],
      } 
    }
 
-   handleChange(selectedOption) {
-    this.setState({selectedOption});
-   }
+  // handleChange(selectedOption) {
+  //  this.setState({selectedOption});
+  // }
+
+   handleChange = (selectedOption) => {this.setState({ currentOption: selectedOption });}
+
  render(){
   
  return (
@@ -23,7 +27,7 @@ class Ddlist extends React.Component {
            <Select
                 name="form-field-name"
                 value={this.state.value}
-                onChange={this.handleChange}
+                onChange={this.handleChange.bind(this)}
                 options={this.props.setValue}
                 className="dd"                 
             />
