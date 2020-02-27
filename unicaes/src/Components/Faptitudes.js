@@ -1,5 +1,6 @@
 import React from 'react';
 import Api from '../Api';
+import Toast from '../Components/Toast';
 
 class Faptitudes extends React.Component{
 
@@ -67,7 +68,7 @@ render(){
                 <div className="col-5">
                     <label>&nbsp;</label>
                     <br />
-                    <input className="btn btn-primary" type="submit" value="Registrar"/>
+                   <Toast/>
                 </div>
                 <div className="col-2"></div>
             </div>
