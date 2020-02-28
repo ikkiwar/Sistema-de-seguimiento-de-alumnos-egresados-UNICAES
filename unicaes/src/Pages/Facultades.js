@@ -4,13 +4,14 @@ import Ffacultades from '../Components/Ffacultades';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Facultades.css';
 
+
 class Facultades extends React.Component {
 
     render() {
         const encabezado = [
             {
                 Header: "#",
-                accessor: "id"
+                accessor: "idfacultad"
             },
             {
                 Header: "Facultad",
@@ -34,7 +35,7 @@ class Facultades extends React.Component {
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <Navbar />
                 <br />
-                <Ffacultades />
+                <Ffacultades entidad="/facultades" />
                 <div className="FaTabla">
                     <Tabla entidad="/facultades" columnas={encabezado} />
                     </div>
