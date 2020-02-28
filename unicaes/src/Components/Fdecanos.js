@@ -38,7 +38,7 @@ class Fdecanos extends React.Component{
 
         }
 
-        //  window.location.replace('');
+          window.location.replace('');
 
     }
 
@@ -107,7 +107,7 @@ return(
                 <div class="col-2" >
                     <label>&nbsp;</label>
                     <br />
-                    <input class="btn btn-primary" type="submit" value="Registrar"/>
+                   <Toast/>
                 </div>
                 <div class="col-2"></div>
             </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import '../Components/Styles/Finstituciones.css';
 import Api from '../Api';
 import DynamicSelect from './DynamicSelect';
+import Toast from '../Components/Toast';
 
 
 class Finstituciones extends React.Component {
@@ -43,7 +44,7 @@ class Finstituciones extends React.Component {
 
         }
 
-        //  window.location.replace('');
+          window.location.replace('');
 
     }
 
@@ -163,7 +164,7 @@ class Finstituciones extends React.Component {
                 <div class="col-5" >
                     <label>&nbsp;</label>
                     <br />
-                    <input class="btn btn-primary" type="submit" value="Registrar"/>
+                   <Toast/>
                 </div>
                 <div class="col-2"></div>
             </div>
