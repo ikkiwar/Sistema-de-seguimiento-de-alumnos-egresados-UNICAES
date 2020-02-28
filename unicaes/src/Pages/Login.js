@@ -19,7 +19,7 @@ class Login extends React.Component {
                     <h1>¡Se bienvenido a tu comunidad de profesionales UNICAES!</h1>
                 </div>
 
-                <Imagenes imagen={Equipo} />
+                <Imagenes imagen={Equipo} clases="Imagenes"/>
 
 
             </div>
