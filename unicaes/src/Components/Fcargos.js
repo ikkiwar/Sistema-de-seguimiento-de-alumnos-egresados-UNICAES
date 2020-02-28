@@ -1,6 +1,6 @@
 import React from 'react';
 import Api from '../Api';
-
+import Toast from '../Components/Toast';
 
 class Fcargos extends React.Component{
 
@@ -69,7 +69,7 @@ return(
                 <div class="col-5">
                     <label>&nbsp;</label>
                     <br />
-                    <input class="btn btn-primary" type="submit" value="Registrar"/>
+                    <Toast/>
                 </div>
                 <div class="col-2"></div>
             </div>

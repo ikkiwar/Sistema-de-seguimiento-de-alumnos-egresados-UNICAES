@@ -14,6 +14,7 @@ class Fcarreras extends React.Component {
             carrera : '',
             idfacultad: '',
             tipocarrera: ''
+
         }
     }
 
@@ -55,7 +56,9 @@ class Fcarreras extends React.Component {
                 body: JSON.stringify(this.state)
             }
 
+
             let res = await fetch(`${Api}${'/carreras'}`, confing)
+
             let json = await res.json()
 
             console.log(json)
@@ -74,6 +77,7 @@ class Fcarreras extends React.Component {
         this.setState(partialState)
     }
 
+
     handleSelectChangeTC = (selectedValue) => {
         console.log(selectedValue)
         this.setState({
@@ -84,6 +88,7 @@ class Fcarreras extends React.Component {
         console.log(selectedValue)
         this.setState({
             idfacultad: selectedValue
+
         });
     }
 
@@ -132,7 +137,9 @@ class Fcarreras extends React.Component {
                                 <br />
                                 <DynamicSelect className="dd" setValue={tiposcarrera}
                                     setSelectTag={'Seleccione tipo de carrera'}
+
                                     onSelectChange={this.handleSelectChangeTC}
+
                                 />
 
                             </div>
@@ -143,7 +150,9 @@ class Fcarreras extends React.Component {
                                 <br />
                                 <DynamicSelect className="dd" setValue={facultades}
                                     setSelectTag={'Seleccione facultad'}
+
                                     onSelectChange={this.handleSelectChangeF}
+
                                 />
                             </div>
                             <div class="col-5">

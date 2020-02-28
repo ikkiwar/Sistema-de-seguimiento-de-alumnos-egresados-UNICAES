@@ -1,6 +1,7 @@
 import React from 'react';
 import "./Styles/Fregistro.css"
 import Api from '../Api';
+import Toast from '../Components/Toast';
 
 class Fregistro extends React.Component {
 
@@ -192,8 +193,8 @@ class Fregistro extends React.Component {
                             <div class="col-3">
                             </div>
                             <div class="col-8" >
-                                <input type="submit" name="Submit" value="Registrar"
-                                    class="btn btn-success" />
+                               <Toast/>
+                                    
                             </div>
                         </div>
                     </form>
