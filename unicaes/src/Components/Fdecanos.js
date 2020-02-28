@@ -1,8 +1,44 @@
 import React from 'react';
+import Api from '../Api';
+import DynamicSelect from './DynamicSelect';
 
 class Fdecanos extends React.Component{
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            facultades: [],
+         } 
+       }
+
+     componentDidMount() {
+        fetch(`${Api}${"/facultades"}`, {
+          method: "GET"
+        })
+        .then(Response => Response.json())
+        .then(facultades => {
+          this.setState({
+            facultades: facultades
+            });
+        });
+      }
+
+      handleSelectChange = (selectedValue) =>{
+        this.setState({
+          selectedValue: selectedValue
+        });
+      }
+
 render(){
+
+    let facultades = this.state.facultades.map((facultad) =>
+            <option
+            key={facultad.idfacultad}
+            value={facultad.idfacultad}>
+                {facultad.facultad}
+            </option>
+        );
+
 return(
     <div>
         <br/>
@@ -27,14 +63,7 @@ return(
                 <div class="col-4">
                     <label for="cmbFacultad">Facultad:</label>
                     <br />
-                    <select class="btn btn-light dropdown-toggle form-control">
-                        <option value="#">Facultad</option>
-                        <option value="#">CC Humanidades</option>
-                        <option value="#">CC Empresariales</option>
-                        <option value="#">CC de la salud</option>
-                        <option value="#">Ingeniería y arquitectura</option>
-                        <option value="#">Multidisciplinaria de Ilobasco</option>
-                    </select>
+                    <DynamicSelect className="dd" setSelectTag={'Seleccione facultad'} setValue={facultades} onSelectChange={this.handleSelectChange} />
                 </div>
                 <div class="col-2" >
                     <label>&nbsp;</label>

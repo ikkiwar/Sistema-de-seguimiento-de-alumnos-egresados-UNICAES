@@ -1,6 +1,6 @@
 import React from 'react';
 import Api from '../Api';
-import Ddlist from './Ddlist';
+import DynamicSelect from './DynamicSelect';
 
 class Fcarreras extends React.Component{
     
@@ -69,14 +69,28 @@ class Fcarreras extends React.Component{
         this.setState(partialState)
     }
 
-    render(){
-        let facultades = this.state.facultades.map(function (facultad) {
-            return { value: facultad.idfacultad, label: facultad.facultad };
-        })
+    handleSelectChange = (selectedValue) =>{
+        this.setState({
+          selectedValue: selectedValue
+        });
+      }
 
-        let tiposcarrera = this.state.tiposcarrera.map(function (tcarrera) {
-            return { value: tcarrera.idtipocarrera, label: tcarrera.tipocarrera };
-        })
+    render(){
+        let facultades = this.state.facultades.map((facultad) =>
+            <option
+            key={facultad.idfacultad}
+            value={facultad.idfacultad}>
+                {facultad.facultad}
+            </option>
+        );
+
+        let tiposcarrera = this.state.tiposcarrera.map((tcarrera) =>
+            <option
+            key={tcarrera.idtipocarrera}
+            value={tcarrera.idtipocarrera}>
+                {tcarrera.tipocarrera}
+            </option>
+        )
 
 return(
     <div>
@@ -101,7 +115,7 @@ return(
                 <div class="col-5">
                     <label for="cmbTipo">Tipo:</label>
                     <br />
-                    <Ddlist className="dd" setValue={tiposcarrera} />
+                    <DynamicSelect className="dd" setValue={tiposcarrera} setSelectTag={'Seleccione tipo de carrera'} onSelectChange={this.handleSelectChange} />
 
                 </div>
                 <div class="col-1"></div>
@@ -109,7 +123,7 @@ return(
                 <div class="col-5">
                     <label for="cmbFacultad">Facultad:</label>
                     <br />
-                    <Ddlist className="dd" setValue={facultades} />
+                    <DynamicSelect className="dd" setValue={facultades} setSelectTag={'Seleccione facultad'} onSelectChange={this.handleSelectChange} />
                 </div>
                 <div class="col-5">
                     <label>&nbsp;</label>
