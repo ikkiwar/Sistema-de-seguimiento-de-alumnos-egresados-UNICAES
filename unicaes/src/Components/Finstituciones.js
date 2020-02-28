@@ -1,9 +1,73 @@
 import React from 'react';
 import '../Components/Styles/Finstituciones.css';
+import Api from '../Api';
+import DynamicSelect from './DynamicSelect';
+
+//const arrayOfData=[];
 
 class Finstituciones extends React.Component {
+    
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            departamentos: [],
+            municipios: []
+         } 
+       }
+
+     componentDidMount() {
+        fetch(`${Api}${"/departamentos"}`, {
+          method: "GET"
+        })
+        .then(Response => Response.json())
+        .then(departamentos => {
+          this.setState({
+            departamentos: departamentos
+            });
+        });
+      }
+
+      handleSelectChangeD = (selectedValue) =>{
+        this.setState({
+          selectedValue: selectedValue
+        });
+        fetch(`${Api}${"/municipiosdep/"}${selectedValue}`, {
+            method: "GET"
+          })
+          .then(Response => Response.json())
+          .then(municipios => {
+            this.setState({
+              municipios: municipios
+              });
+          });
+      }
+
+      handleSelectChangeM = (selectedValue) =>{
+        this.setState({
+          selectedValue: selectedValue
+        });
+      }
 
     render() {
+
+        let departamentos = this.state.departamentos.map((departamento) => 
+            <option
+                key={departamento.iddepartamento}
+                value={departamento.iddepartamento}
+            >
+                {departamento.departamento}
+            </option>
+        );
+        let municipios = this.state.municipios.map((municipio) => 
+            <option
+                key={municipio.idmunicipio}
+                value={municipio.idmunicipio}
+            >
+                {municipio.municipio}
+            </option>
+        );
+
         return (
             <div className="finstituciones">
 
@@ -40,19 +104,12 @@ class Finstituciones extends React.Component {
                 <div class="col-5">
                     <label for="cmbDepa">Departamento:</label>
                     <br />
-                    <select class="btn btn-light dropdown-toggle form-control">
-                        <option value="#">Departamentos</option>
-                        <option value="#">Santa Ana</option>
-                        <option value="#">Chalatenango</option>
-                    </select>
+                    <DynamicSelect setValue={departamentos} setSelectTag={'Seleccione departamento'} onSelectChange={this.handleSelectChangeD} />
                 </div>
                 <div class="col-5">
                     <label for="cmbMun">Municipio:</label>
                     <br />
-                    <select class="btn btn-light dropdown-toggle form-control">
-                        <option value="#">Municipios</option>
-                        <option value="#">Candelaria de la Frontera</option>
-                    </select>
+                    <DynamicSelect setValue={municipios} setSelectTag={'Seleccione municipio'} onSelectChange={this.handleSelectChangeM} />
                 </div>
                 <div class="col-1"></div>
                 <div class="col-1"></div>
