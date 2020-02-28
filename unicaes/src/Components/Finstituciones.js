@@ -3,7 +3,6 @@ import '../Components/Styles/Finstituciones.css';
 import Api from '../Api';
 import DynamicSelect from './DynamicSelect';
 
-//const arrayOfData=[];
 
 class Finstituciones extends React.Component {
     
@@ -12,9 +11,41 @@ class Finstituciones extends React.Component {
         super(props);
         this.state = {
             departamentos: [],
-            municipios: []
+            municipios: [],
+            direccion: '',
+            idmunicipio: '',
+            nombre: '',
+            telefono: ''
          } 
        }
+
+       handleSubmit = async e => {
+        e.preventDefault()
+        console.log(this.state)
+
+
+        try {
+            let confing = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify(this.state)
+            }
+
+            let res = await fetch(`${Api}${'/instituciones'}`, confing)
+            let json = await res.json()
+
+            console.log(json)
+        } catch (error) {
+
+        }
+
+        //  window.location.replace('');
+
+    }
 
      componentDidMount() {
         fetch(`${Api}${"/departamentos"}`, {
@@ -27,6 +58,13 @@ class Finstituciones extends React.Component {
             });
         });
       }
+
+      handleChange = e => {
+        // console.log(`${e.target.name}: ${e.target.value}`)
+        let partialState = {}
+        partialState[e.target.name] = e.target.value
+        this.setState(partialState)
+    }
 
       handleSelectChangeD = (selectedValue) =>{
         this.setState({
@@ -45,7 +83,7 @@ class Finstituciones extends React.Component {
 
       handleSelectChangeM = (selectedValue) =>{
         this.setState({
-          selectedValue: selectedValue
+          idmunicipio: selectedValue
         });
       }
 
@@ -82,22 +120,24 @@ class Finstituciones extends React.Component {
     <br />
                 </div>
  
-    <form name="nuevaInstitucion" method="POST">
+    <form onSubmit={this.handleSubmit}>
         <div class="container">
             <div class="container-fluid row d-flex p-2 bd-highlight border border-warning">
                 <div class="col-1"></div>
                 <div class="col-5">
                     <label for="txtInstitucion">Nombre de institución/empresa:</label>
                     <br />
-                    <input type="text" class="form-control" name="txtInstitucion"
-                     placeholder="Ej. UNICAES" />
+                    <input type="text" class="form-control" name="nombre"
+                     placeholder="Ej. UNICAES" onChange={this.handleChange}
+                     value={this.state.nombre}/>
                 </div>
                 <div class="col-5">
                     <label for="txtDirección">Dirección:</label>
                     <br />
-                    <input type="text" class="form-control" name="txtDirección"
+                    <input type="text" class="form-control" name="direccion" 
                     placeholder="Ej. By pass Carretera a Metapán y carretera 
-                    antigua a San Salvador"/>
+                    antigua a San Salvador" onChange={this.handleChange}
+                    value={this.state.direccion}/>
                 </div>
                 <div class="col-1"></div>
                 <div class="col-1"></div>
@@ -116,8 +156,9 @@ class Finstituciones extends React.Component {
                 <div class="col-5">
                     <label for="txtTelefono">Teléfono:</label>
                     <br />
-                    <input type="text" class="form-control" name="txtTelefono"
-                     placeholder="Ej. 2484-0600" />
+                    <input type="text" class="form-control" name="telefono"
+                     placeholder="Ej. 2484-0600" onChange={this.handleChange}
+                     value={this.state.telefono}/>
                 </div>
                 <div class="col-5" >
                     <label>&nbsp;</label>
