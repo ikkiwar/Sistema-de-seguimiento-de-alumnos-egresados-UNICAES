@@ -11,6 +11,10 @@ class Fcarreras extends React.Component {
         this.state = {
             facultades: [],
             tiposcarrera: [],
+            carrera : '',
+            idfacultad: '',
+            tipocarrera: ''
+
         }
     }
 
@@ -52,7 +56,9 @@ class Fcarreras extends React.Component {
                 body: JSON.stringify(this.state)
             }
 
-            let res = await fetch(`${Api}${this.props.entidad}`, confing)
+
+            let res = await fetch(`${Api}${'/carreras'}`, confing)
+
             let json = await res.json()
 
             console.log(json)
@@ -71,10 +77,18 @@ class Fcarreras extends React.Component {
         this.setState(partialState)
     }
 
-    handleSelectChange = (selectedValue) => {
+
+    handleSelectChangeTC = (selectedValue) => {
         console.log(selectedValue)
         this.setState({
-            selectedValue: selectedValue
+            tipocarrera: selectedValue
+        });
+    }
+    handleSelectChangeF = (selectedValue) => {
+        console.log(selectedValue)
+        this.setState({
+            idfacultad: selectedValue
+
         });
     }
 
@@ -123,10 +137,9 @@ class Fcarreras extends React.Component {
                                 <br />
                                 <DynamicSelect className="dd" setValue={tiposcarrera}
                                     setSelectTag={'Seleccione tipo de carrera'}
-                                    onSelectChange={this.handleSelectChange}
-                                    name="tipocarrera"
-                                    onChange={this.handleChange}
-                                    value={this.state.tipocarrera}
+
+                                    onSelectChange={this.handleSelectChangeTC}
+
                                 />
 
                             </div>
@@ -137,10 +150,9 @@ class Fcarreras extends React.Component {
                                 <br />
                                 <DynamicSelect className="dd" setValue={facultades}
                                     setSelectTag={'Seleccione facultad'}
-                                    onSelectChange={this.handleSelectChange}
-                                    name="idfacultad"
-                                    onChange={this.handleChange}
-                                    value={this.state.idfacultad}
+
+                                    onSelectChange={this.handleSelectChangeF}
+
                                 />
                             </div>
                             <div class="col-5">
