@@ -1,6 +1,7 @@
 import React from 'react';
 import Api from '../Api';
 import DynamicSelect from './DynamicSelect';
+import Toast from '../Components/Toast';
 
 class Fcarreras extends React.Component {
 
@@ -66,7 +67,7 @@ class Fcarreras extends React.Component {
 
         }
 
-        //  window.location.replace('');
+         window.location.replace('');
 
     }
 
@@ -158,7 +159,7 @@ class Fcarreras extends React.Component {
                             <div class="col-5">
                                 <label>&nbsp;</label>
                                 <br />
-                                <input class="btn btn-primary" type="submit" value="Registrar" />
+                               <Toast/>
                             </div>
                             <div class="col-2"></div>
                         </div>
