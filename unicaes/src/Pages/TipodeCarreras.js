@@ -10,13 +10,13 @@ class TipodeCarrera extends React.Component {
         const encabezado = [
             {
                 Header: "#",
-                accessor: "userId",
+                accessor: "idtipocarrera",
 
 
             },
             {
                 Header: "Tipo de Carrera",
-                accessor: "id",
+                accessor: "tipocarrera",
 
             },
 
@@ -45,9 +45,9 @@ class TipodeCarrera extends React.Component {
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <Navbar />
                 <br />
-                <Ftiposcarreras />
+                <Ftiposcarreras entidad="/tiposcarrera"/>
                 <div className="TTabla">
-                    <Tabla entidad="/posts" columnas={encabezado} />
+                    <Tabla entidad="/tiposcarrera" columnas={encabezado} />
                 </div>
             </div>
         )
