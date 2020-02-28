@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
+
+#copias de archivos para que le funcione a vladi :v
+mpackage.json
