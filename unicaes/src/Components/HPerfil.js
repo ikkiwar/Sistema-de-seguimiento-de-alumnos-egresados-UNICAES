@@ -13,8 +13,6 @@ class HPerfil extends React.Component{
     }
 
     componentDidMount(){
-        console.log(`${Api}/perfil/${this.props.dui}`);
-        
         fetch(`${Api}/perfil/${this.props.dui}`, {
             method: "GET"
         })
