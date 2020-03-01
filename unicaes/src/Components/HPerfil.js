@@ -13,6 +13,8 @@ class HPerfil extends React.Component{
     }
 
     componentDidMount(){
+        console.log(`${Api}/perfil/${this.props.dui}`);
+        
         fetch(`${Api}/perfil/${this.props.dui}`, {
             method: "GET"
         })
@@ -26,8 +28,6 @@ class HPerfil extends React.Component{
 
     render(){
         const datos = this.state.datos
-        console.log(datos[0]);
-        
         return(
             <div className="border border-warning row">
                 <div className="col-1"></div>
@@ -40,10 +40,11 @@ class HPerfil extends React.Component{
                 <div className="col-1"></div>
                 <div className="col-6 pt-5">
                     {datos.map((d, i) => {
-                        return <div> 
+                        return <div key={i}> 
                             <p className="h4">{d.nombrePersona} {d.apellido}</p> 
                             <p className="h5">{d.carrera}</p>
-                            <p className="h6"><a href="/">Información de contacto</a></p>
+                            <p className="h6"><a href="/">{d.correo}</a></p>
+                            <p className="h6"><a href="/">{d.telefono}</a></p>
                         </div>
                         
                     })}
