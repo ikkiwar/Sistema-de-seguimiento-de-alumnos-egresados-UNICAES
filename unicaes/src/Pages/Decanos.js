@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import Fdecanos from '../Components/Fdecanos';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Decanos.css';
@@ -72,7 +72,7 @@ class Decanos extends React.Component {
         return (
             <div className="Decanos">
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <Navbar />
+                <Barra />
                 <Fdecanos />
                 <div className="Dtabla">
                     <Tabla entidad="/decanos" columnas={encabezado} />

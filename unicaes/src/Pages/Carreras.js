@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import Tabla from '../Components/Tabla';
 import Fcarreras from '../Components/Fcarreras';
 import '../Components/Styles/Carreras.css';
@@ -42,7 +42,7 @@ class Carreras extends React.Component {
         return (
             <div className="Carreras">
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <Navbar />
+                <Barra />
                 <br/>
                 <Fcarreras/> 
                 <div className="CaTabla">

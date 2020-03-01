@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import Ffacultades from '../Components/Ffacultades';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Facultades.css';
@@ -33,7 +33,7 @@ class Facultades extends React.Component {
         return (
             <div className="Facultades">
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <Navbar />
+                <Barra />
                 <br />
                 <Ffacultades entidad="/facultades" />
                 <div className="FaTabla">

@@ -1,7 +1,7 @@
 import React from 'react';
 import Fcargos from '../Components/Fcargos';
 import Tabla from '../Components/Tabla';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import '../Components/Styles/Cargos.css';
 
 class Cargos extends React.Component {
@@ -35,7 +35,7 @@ class Cargos extends React.Component {
         return (
             <div  className="cargos">
                 <style>{'body { background-color: #9E2723; }'}</style>
-               <Navbar/>
+               <Barra/>
                <br/>
                     <Fcargos entidad="/cargos" />
                     <div className="Ctabla">
