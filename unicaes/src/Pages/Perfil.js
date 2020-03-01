@@ -1,5 +1,5 @@
 import React from 'react';
-import Barra from '../Components/Barra';
+import BarraPerfil from '../Components/BarraPerfil';
 import HPerfil from "../Components/HPerfil";
 import Cards from "../Components/Cards";
 class Perfil extends React.Component{
@@ -8,7 +8,7 @@ class Perfil extends React.Component{
         return(
             <div>
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <Barra/>
+                <BarraPerfil/>
                 <div className='container pt-4'>
                     <HPerfil dui="0000000-0"/>
                 </div>
