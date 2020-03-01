@@ -43,7 +43,7 @@ class HPerfil extends React.Component{
                         return <div> 
                             <p className="h4">{d.nombrePersona} {d.apellido}</p> 
                             <p className="h5">{d.carrera}</p>
-                            <p className="h6"><a href="#">Información de contacto</a></p>
+                            <p className="h6"><a href="/">Información de contacto</a></p>
                         </div>
                         
                     })}

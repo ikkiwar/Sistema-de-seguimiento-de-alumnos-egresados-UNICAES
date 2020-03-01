@@ -37,7 +37,6 @@ class Cards extends React.Component{
                     }
                 })
                 return list
-                break;
             case 'Diplomas/Certificados':
                 list = datos.map((d,i) => {
                     return{
@@ -47,7 +46,6 @@ class Cards extends React.Component{
                     }
                 })
                 return list
-                break;
             case 'Aptitudes':
                 list = datos.map((d,i) => {
                     return{
@@ -57,7 +55,6 @@ class Cards extends React.Component{
                     }
                 })
                 return list
-                break;
             case 'Experiencia Laboral':
                 list = datos.map((d,i) => {
                     return{
@@ -71,7 +68,6 @@ class Cards extends React.Component{
                     }
                 })
                 return list
-                break;
             default:
                 list = datos.map((d,i) => {
                     return{
@@ -79,7 +75,6 @@ class Cards extends React.Component{
                     }
                 })
                 return list
-                break;
         }
     }
 
@@ -103,11 +98,11 @@ class Cards extends React.Component{
         
         return(
             <div className="card bg-dark">
-                <a className="btn btn-primary">
+                <div className="btn btn-primary">
                     <div className="card-header" aria-expanded="true" onClick={() => this.collapse()}>
                         {this.props.tituloBoton}
                     </div>
-                </a>
+                </div>
                 <Collapse isOpened={this.state.isOpened}>                
                     <div className="card-body">
                         <ul className="list-group list-group-flush collapse show">
