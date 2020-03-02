@@ -11,7 +11,6 @@ class Cards extends React.Component{
         super(props)
         this.state = {
             isOpened: true,
-            datos: [],
             carreras: [],
             diplomas: [],
             aptitudes: [],
@@ -93,8 +92,6 @@ class Cards extends React.Component{
     collapse(){ (this.state.isOpened === true) ? this.setState({isOpened: false}) : this.setState({isOpened: true}) }
 
     render(){
-        // const lista = this.array_generator(datos, "nombre", "cargo", "fechainicio", "fechafin", "area")
-        // console.log(lista);
         const lista = this.filtrar();
         return(
             <div className="card bg-dark">
