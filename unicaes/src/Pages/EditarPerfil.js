@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 
 class EditarPerfil extends React.Component{
 
@@ -8,7 +8,7 @@ class EditarPerfil extends React.Component{
         return(
             <div>
                 <style>{'body { background-color: #9E2723; }'}</style>
-    <Navbar/>
+    <Barra/>
             </div>
         )
     }

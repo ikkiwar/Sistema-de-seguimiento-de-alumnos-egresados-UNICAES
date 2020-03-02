@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import Tabla from '../Components/Tabla';
 import Fareas from '../Components/Fareas';
 import '../Components/Styles/AreasLaborales.css';
@@ -41,7 +41,7 @@ class AreasLaborales extends React.Component {
         return (
             <div className="areas">
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <Navbar />
+                <Barra />
                 <br/>
                 <Fareas entidad="/areaslaborales"/>
                 <div className="Artabla">

@@ -1,6 +1,6 @@
 import React from 'react';
 import Faptitudes from '../Components/Faptitudes';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Aptitudes.css';
 
@@ -41,7 +41,7 @@ class Aptitudes extends React.Component{
         return(
             <div className="aptitudes">
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <Navbar/>
+                <Barra/>
                 <br/>
                 <Faptitudes entidad="/aptitudes"/>
                 <div className="Aptabla">

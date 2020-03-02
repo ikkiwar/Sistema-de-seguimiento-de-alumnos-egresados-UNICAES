@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabla from '../Components/Tabla';
 import Finstituciones from '../Components/Finstituciones';
-import Navbar from '../Components/Navbar';
+import Barra from '../Components/Barra';
 import '../Components/Styles/Instituciones.css';
 class Instituciones extends React.Component{
 
@@ -51,7 +51,7 @@ class Instituciones extends React.Component{
         return(
             <div  className="instituciones" >
                 <style>{'body { background-color: #9E2723; }'}</style>
-             <Navbar/>
+             <Barra/>
              <br/>
              <Finstituciones/>
              <div className="Itabla">

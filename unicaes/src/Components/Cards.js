@@ -11,57 +11,65 @@ class Cards extends React.Component{
         super(props)
         this.state = {
             isOpened: true,
-            datos: []
+            carreras: [],
+            diplomas: [],
+            aptitudes: [],
+            experiencia: []
         }
     }
 
     componentDidMount(){
-        fetch(`${Api}/perfil/${this.props.dui}`, {
-            method: "GET"
-        })
-        .then(Response => Response.json())
-        .then(datos => {
-            this.setState({
-                datos: datos
-            });
-        });
+        this.loadData("carrerasegresado", "carreras")
+        this.loadData("diplomasegresado", "diplomas")
+        this.loadData("aptitudesegresado", "aptitudes")
+        this.loadData("experiencialaboral", "experiencia")
     }
 
-    filtrar(datos){
+    loadData(entidad, arreglo){
+        fetch(`${Api}/${entidad}/${this.props.dui}`, {
+            method: "GET"
+        })
+        .then(res => res.json())
+        .then(datos => {
+            this.setState({
+                [arreglo] : datos,
+            })
+        })
+        .catch(e => console.error(e))
+    }
+
+    filtrar(){
         let list
         switch (this.props.tituloBoton) {
             case 'Carreras':
-                list = datos.map((d,i) => {
+                list = this.state.carreras.map((d,i) => {
                     return{
-                        data : <li className="list-group-item bg-dark">{d.carrera}</li>
+                        data : <li className="list-group-item bg-dark" key={i}>{d.carrera}</li>
                     }
                 })
                 return list
-                break;
             case 'Diplomas/Certificados':
-                list = datos.map((d,i) => {
+                list = this.state.diplomas.map((d,i) => {
                     return{
-                        data : <li className="list-group-item bg-dark">
-                            {d.carrera}
+                        data : <li className="list-group-item bg-dark" key={i}>
+                            {d.nombre}
                         </li>
                     }
                 })
                 return list
-                break;
             case 'Aptitudes':
-                list = datos.map((d,i) => {
+                list = this.state.aptitudes.map((d,i) => {
                     return{
-                        data : <li className="list-group-item bg-dark">
+                        data : <li className="list-group-item bg-dark" key={i}>
                             {d.aptitud}
                         </li>
                     }
                 })
                 return list
-                break;
             case 'Experiencia Laboral':
-                list = datos.map((d,i) => {
+                list = this.state.experiencia.map((d,i) => {
                     return{
-                        data : <li className="list-group-item bg-dark">
+                        data : <li className="list-group-item bg-dark" key={i}>
                             Empresa: {d.nombre}<br/>
                             Cargo: {d.cargo}<br/>
                             Fecha Inicio: {d.fechainicio}<br/>
@@ -71,22 +79,10 @@ class Cards extends React.Component{
                     }
                 })
                 return list
-                break;
             default:
-                list = datos.map((d,i) => {
-                    return{
-                    data : <li className="list-group-item bg-dark">No hay datos</li>
-                    }
-                })
+                list = { data : <li className="list-group-item bg-dark">No hay datos</li>}
                 return list
-                break;
         }
-    }
-
-    carreras(datos){
-        this.setState({
-            filtro: datos.map(items => items.carrera)
-        })  
     }
     
     /**
@@ -96,28 +92,24 @@ class Cards extends React.Component{
     collapse(){ (this.state.isOpened === true) ? this.setState({isOpened: false}) : this.setState({isOpened: true}) }
 
     render(){
-        const datos = this.state.datos
-        const lista = this.filtrar(datos)
-        console.log(datos);
-        console.log(lista);
-        
-        return(
-            <div className="card bg-dark">
-                <a className="btn btn-primary">
-                    <div className="card-header" aria-expanded="true" onClick={() => this.collapse()}>
-                        {this.props.tituloBoton}
+        const lista = this.filtrar();
+        return( 
+                <div className="card bg-dark" >
+                    <div className="btn btn-primary">
+                        <div className="card-header" aria-expanded="true" onClick={() => this.collapse()}>
+                            {this.props.tituloBoton}
+                        </div>
                     </div>
-                </a>
-                <Collapse isOpened={this.state.isOpened}>                
-                    <div className="card-body">
-                        <ul className="list-group list-group-flush collapse show">
-                            {lista.map((l, i) =>{
-                                return l.data
-                            })}
-                        </ul>
-                    </div>
-                </Collapse>
-            </div>
+                    <Collapse isOpened={this.state.isOpened}>                
+                        <div className="card-body mt-3">
+                            <ul className="list-group list-group-flush collapse show" style={{color: "white"}}>
+                                {lista.map((l, i) =>{
+                                    return l.data
+                                })}
+                            </ul>
+                        </div>
+                    </Collapse>
+                </div>
         )
     }
 }
