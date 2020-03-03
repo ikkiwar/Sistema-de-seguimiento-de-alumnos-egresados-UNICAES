@@ -4,17 +4,23 @@ import 'react-toastify/dist/ReactToastify.css';
 
 class Toast extends React.Component{
 
-    
+    constructor(props) {
+        super(props);
+       
+    }
+
     render(){
    toast.configure()
     const notify = () => {
-    /*    if(this.props.validador == true){
+        
+    if(this.props.validador == true){
+        console.log("hola soy goku")
             toast.success('¡Dato agregado!')
         }
         else{
             toast.error('¡algo salio mal!')
-        }**/
-        toast.success('¡Dato agregado!')
+        }
+       //() toast.success('¡Dato agregado!')
         
     }
     

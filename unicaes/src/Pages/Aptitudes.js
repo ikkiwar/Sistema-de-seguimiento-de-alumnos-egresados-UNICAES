@@ -3,8 +3,19 @@ import Faptitudes from '../Components/Faptitudes';
 import Barra from '../Components/Barra';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Aptitudes.css';
+import { Button } from 'react-bootstrap';
+import Api from '../Api';
 
 class Aptitudes extends React.Component{
+
+    deleteRow(id) {
+        fetch(Api + '/aptitudes/' + id, {
+           method: 'DELETE'
+         })
+         .then(response => response.json());
+        
+       
+   }
 
     render(){
 
@@ -24,7 +35,20 @@ class Aptitudes extends React.Component{
             {
                 Header: "Acciones",
                 Cell: props => {
-                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                    return (
+                        <Button variant="danger"
+                            onClick={() => {
+                               // console.log("datos:", props)
+                             this.deleteRow(props.original.idaptitud);
+                             
+                            }
+                            
+                            }
+                            id ={this.idcargo}
+                        >Borrar</Button>
+
+
+                    )
                   },
                   width: 100,
                   maxWidth: 100,

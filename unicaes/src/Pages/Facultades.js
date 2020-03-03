@@ -3,9 +3,19 @@ import Barra from '../Components/Barra';
 import Ffacultades from '../Components/Ffacultades';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Facultades.css';
+import { Button } from 'react-bootstrap';
+import Api from '../Api';
 
 
 class Facultades extends React.Component {
+
+    deleteRow(id) {
+        fetch(Api + '/facultades/' + id, {
+           method: 'DELETE'
+         })
+         .then(response => response.json());
+         
+   }
 
     render() {
         const encabezado = [
@@ -21,7 +31,20 @@ class Facultades extends React.Component {
             {
                 Header: "ACCIONES",
                 Cell: props => {
-                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                    return (
+                        <Button variant="danger"
+                            onClick={() => {
+                               // console.log("datos:", props)
+                             this.deleteRow(props.original.idfacultad);
+                             
+                            }
+                            
+                            }
+                            id ={this.idcargo}
+                        >Borrar</Button>
+
+
+                    )
                 },
                 width: 100,
                 maxWidth: 100,

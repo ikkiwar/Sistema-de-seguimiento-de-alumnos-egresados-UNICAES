@@ -3,8 +3,20 @@ import Barra from '../Components/Barra';
 import Tabla from '../Components/Tabla';
 import Ftiposcarreras from '../Components/Ftipocarreras';
 import '../Components/Styles/TipodeCarreras.css';
+import { Button } from 'react-bootstrap';
+import Api from '../Api';
+
 
 class TipodeCarrera extends React.Component {
+
+    deleteRow(id) {
+        fetch(Api + '/tiposcarrera/' + id, {
+           method: 'DELETE'
+         })
+         .then(response => response.json());
+         
+   }
+
 
     render() {
         const encabezado = [
@@ -24,7 +36,20 @@ class TipodeCarrera extends React.Component {
             {
                 Header: "Acciones",
                 Cell: props => {
-                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                    return (
+                        <Button variant="danger"
+                            onClick={() => {
+                               // console.log("datos:", props)
+                             this.deleteRow(props.original.idtipocarrera);
+                             
+                            }
+                            
+                            }
+                            id ={this.idcargo}
+                        >Borrar</Button>
+
+
+                    )
                 },
                 width: 100,
                 maxWidth: 100,

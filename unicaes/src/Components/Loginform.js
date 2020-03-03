@@ -1,13 +1,16 @@
 import React from 'react';
 import "./Styles/Loginform.css";
 import Api from '../Api';
+import { Redirect } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 
 class Loginform extends React.Component {
 
 
     state = {}
+    alerta = false
 
-    handleSubmit = async e =>{
+    handleSubmit = async e => {
         e.preventDefault()
         console.log(this.state)
 
@@ -21,25 +24,35 @@ class Loginform extends React.Component {
 
                 body: JSON.stringify(this.state)
             }
-            
-            let res = await fetch(`${Api}${this.props.entidad}`,confing)
+
+            let res = await fetch(`${Api}${this.props.entidad}`, confing)
             let json = await res.json()
 
-            console.log(json)
-        } catch (error) {
+            console.log(res.status)
+            if (res.status == 200 ) {
+                console.log("Ingreso")
             
+                window.location.replace("/Perfil");
+            } else {
+                console.log("algo salio mal")
+               alert("¡Usuario o Contraseña incorrectos!")
+
+            }
+
+        } catch (error) {
+
         }
 
     }
 
     handleChange = e => {
-      //  console.log(`${e.target.name}: ${e.target.value}`)
+        //  console.log(`${e.target.name}: ${e.target.value}`)
         let partialState = {}
         partialState[e.target.name] = e.target.value
         this.setState(partialState)
     }
 
-  
+
 
     render() {
         return (
@@ -68,12 +81,7 @@ class Loginform extends React.Component {
                             value={this.state.contrasena}
                         />
                     </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input"
-                            id="exampleCheck1" />
-                        <label class="form-check-label" for="exampleCheck1">
-                            Recordarme</label>
-                    </div>
+                    <br />
                     {/**Mientras se crea la logica de cambiar contrasenias redirige a Login*/}
                     <div><a href="/Login" class="alert-link"> ¿Olvidaste tu contraseña? </a></div>
                     <br />

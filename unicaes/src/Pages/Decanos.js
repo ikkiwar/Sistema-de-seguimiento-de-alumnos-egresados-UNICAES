@@ -3,7 +3,18 @@ import Barra from '../Components/Barra';
 import Fdecanos from '../Components/Fdecanos';
 import Tabla from '../Components/Tabla';
 import '../Components/Styles/Decanos.css';
+import { Button } from 'react-bootstrap';
+import Api from '../Api';
+
 class Decanos extends React.Component {
+
+    deleteRow(id) {
+        fetch(Api + '/decanos/' + id, {
+           method: 'DELETE'
+         })
+         .then(response => response.json());
+         
+   }
 
     render() {
         const encabezado = [
@@ -55,7 +66,20 @@ class Decanos extends React.Component {
             {
                 Header: "ACCIONES",
                 Cell: props => {
-                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                    return (
+                        <Button variant="danger"
+                            onClick={() => {
+                               // console.log("datos:", props)
+                             this.deleteRow(props.original.dui);
+                             
+                            }
+                            
+                            }
+                            id ={this.idcargo}
+                        >Borrar</Button>
+
+
+                    )
                 },
                 width: 100,
                 maxWidth: 100,
