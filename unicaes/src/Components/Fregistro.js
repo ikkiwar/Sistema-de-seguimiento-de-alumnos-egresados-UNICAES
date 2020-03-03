@@ -45,7 +45,7 @@ class Fregistro extends React.Component {
         return (
 
             <div className="fregistro">
-                <h3 className="salu2">¡Forma parte de nuestra grandiosa red!</h3>
+                <h3 className="salu2">Registro de Usuarios</h3>
                 <div >
                     <form onSubmit={this.handleSubmit} >
                         <div class="row" >

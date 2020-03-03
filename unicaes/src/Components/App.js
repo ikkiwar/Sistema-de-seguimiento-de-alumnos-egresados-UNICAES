@@ -30,7 +30,7 @@ return(
     <Route exact path="/Facultades"  component={Facultades}></Route>
     <Route exact path="/TipodeCarreras"  component={TipodeCarrera}></Route>
     <Route exact path="/Perfil"  component={Perfil}></Route>
-    <Route exact path="/AEditarPerfil "  component={EditarPerfil}></Route>
+    <Route exact path="/EditarPerfil"  component={EditarPerfil}></Route>
 </Switch>
 </BrowserRouter>
 );

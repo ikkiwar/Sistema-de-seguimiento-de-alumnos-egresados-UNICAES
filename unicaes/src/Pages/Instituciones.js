@@ -3,7 +3,17 @@ import Tabla from '../Components/Tabla';
 import Finstituciones from '../Components/Finstituciones';
 import Barra from '../Components/Barra';
 import '../Components/Styles/Instituciones.css';
+import { Button } from 'react-bootstrap';
+import Api from '../Api';
 class Instituciones extends React.Component{
+
+    deleteRow(id) {
+        fetch(Api + '/instituciones/' + id, {
+           method: 'DELETE'
+         })
+         .then(response => response.json());
+         
+   }
 
     render(){
         const encabezado = [
@@ -37,7 +47,20 @@ class Instituciones extends React.Component{
             {
                 Header: "Acciones",
                 Cell: props => {
-                    return <button type="button" className="btn btn-warning">Detalle</button>;
+                    return (
+                        <Button variant="danger"
+                            onClick={() => {
+                               // console.log("datos:", props)
+                             this.deleteRow(props.original.idinstitucion);
+                             
+                            }
+                            
+                            }
+                            id ={this.idcargo}
+                        >Borrar</Button>
+
+
+                    )
                   },
                   width: 100,
                   maxWidth: 100,
