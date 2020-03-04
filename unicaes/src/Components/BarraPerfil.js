@@ -4,6 +4,25 @@ import Api from '../Api';
 
 class BarraPerfil extends React.Component{
 
+handleOutsesion(){
+  fetch(Api + '/sesion', {
+    method: 'POST'
+  })
+  .then(response => response.status
+
+  ).then( function(estado){
+    console.log("estado:", estado )
+    if(estado == 200){
+    setTimeout(console.log("Cerrando"), 3000)
+     window.location.replace("/Login");
+    }
+  } );
+
+ 
+
+}
+
+
 
     render() {
         return (
@@ -14,10 +33,10 @@ class BarraPerfil extends React.Component{
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/Login">Pagina Principal</Nav.Link>
-      <NavDropdown title="Facultades" id="basic-nav-dropdown">
+      <NavDropdown title="Pefil" id="basic-nav-dropdown">
         <NavDropdown.Item href="/EditarPerfil">Editar Perfil</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#"> Cerrar Sesion</NavDropdown.Item>
+        <NavDropdown.Item href="#" onClick={this.handleOutsesion}> Cerrar Sesion</NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
