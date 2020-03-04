@@ -1,9 +1,26 @@
 import React from 'react';
 import { Navbar, Nav , NavDropdown , Form , FormControl , Buthrefn } from 'react-bootstrap';
-
+import Api from '../Api';
 
 
 class Barra extends React.Component {
+
+  handleOutsesion(){
+    fetch(Api + '/sesion', {
+      method: 'POST'
+    })
+    .then(response => response.status 
+    ).then( function(estado){
+      console.log("estado:", estado )
+      if(estado == 200){
+      setTimeout(console.log("Cerrando"), 3000);
+        window.location.replace("/Login");
+      }
+    } );
+  
+   
+  
+  }
 
     render() {
         return (
@@ -14,7 +31,6 @@ class Barra extends React.Component {
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/Login">Pagina Principal</Nav.Link>
-      <Nav.Link href="#link">Perfiles</Nav.Link>
       <NavDropdown title="Administración" id="basic-nav-dropdown">
         <NavDropdown.Item href="/Aptitudes">Aptitudes</NavDropdown.Item>
         <NavDropdown.Divider />
@@ -33,6 +49,11 @@ class Barra extends React.Component {
         <NavDropdown.Item href="/Registro">Registro de usuarios</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="/TipodeCarreras">Tipo de Carreras</NavDropdown.Item>
+      </NavDropdown>
+      <NavDropdown title="Cuenta" id="basic-nav-dropdown">
+      <NavDropdown.Item href="/Perfil">Mi Perfil</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item href="#" onClick={this.handleOutsesion}>Cerrar sesion</NavDropdown.Item>
       </NavDropdown>
     </Nav>
   </Navbar.Collapse>
