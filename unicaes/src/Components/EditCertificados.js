@@ -1,0 +1,151 @@
+import React from "react";
+import {Collapse} from "react-collapse";
+import Api from "../Api";
+import DynamicSelect from "../Components/DynamicSelect";
+
+class EditCertificados extends React.Component{
+    constructor(props){
+        super(props)
+        this.state = {
+            isOpened : true,
+            diplomas : [],
+            instituciones: [],
+            areas: [],
+            nombre: "",
+            institucion: "",
+            area: "",
+            loguser: ''
+        }
+    }
+
+    componentDidMount(){
+        this.loguser()
+        this.loadData()
+        this.loadInstituciones()
+        this.loadAreas()
+    }
+
+    loguser(){
+        fetch(`${Api}/logsesion`, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(res => {
+            this.setState({loguser: res.loguser})
+        })
+    }
+
+    loadData(){
+        fetch(`${Api}/diplomasegresado/$`,{
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(data =>{
+            this.setState({diplomas : data})
+        })
+    }
+
+    postInstitucion(data){
+        fetch(`${Api}/diplomasegresado/`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(this.refresh())
+        .catch(error => console.log(error))
+    }
+
+    loadInstituciones(){
+        fetch(`${Api}/instituciones`, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(res =>{
+            this.setState({instituciones: res})
+        })
+    }
+
+    loadAreas(){
+        fetch(`${Api}/areaslaborales`, {
+            method: 'GET'
+        })
+        .then(res => res.json())
+        .then(res =>{
+            this.setState({areas: res})
+        })
+    }
+
+    collapse(){ (this.state.isOpened === true) ? this.setState({isOpened: false}) : this.setState({isOpened: true}) }
+
+    handleSubmit(e){
+        console.log(`
+            nombre: ${document.getElementById('txtNombre').value}
+            institucion: ${document.getElementById('cmbInstitucion').value}
+            area: ${document.getElementById('cmbArea').value}
+        `);
+        const data = {
+            
+        }
+    }
+
+    render(){
+        const lista = this.state.diplomas
+        const instituciones = this.state.instituciones
+        const areas = this.state.areas
+        return(
+            <div className="card bg-dark" >
+                <div className="btn btn-primary">
+                    <div className="card-header" aria-expanded="true" onClick={() => this.collapse()}>
+                        {this.props.tituloBoton}
+                    </div>
+                </div>
+                <Collapse isOpened={this.state.isOpened}>
+                <form>
+                    <div className="container">
+                        <div className="container-fluid row d-flex p-2 bd-highlight border border-warning">
+                            <div className="col-sm-3">
+                                <label>Nombre:</label>
+                                <input type="text" id="txtNombre" className="form-control" placeholder="Ej. Diplomado en formación docente"/>
+                            </div>
+                            <div className="col-sm-3">
+                                <label>Institucion: </label>
+                                <br/>
+                                <select id="cmbInstitucion">
+                                    {instituciones.map((i, j) =>{
+                                        return <option value={i.idinstitucion} key={j}>{i.nombre}</option>
+                                    })}
+                                </select>
+                            </div>
+                            <div className="col-sm-3">
+                                <label>Area Laboral: </label>
+                                <br/>
+                                <select id="cmbArea">
+                                    {areas.map((i, j) =>{
+                                        return <option value={i.idArea} key={j}>{i.area}</option>
+                                    })}
+                                </select>
+                            </div>
+                            <div className="col-sm-3">
+                                <input className="btn btn-primary" type="button" value="Agregar" onClick={this.handleSubmit}/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                    <div className="card-body mt-3">
+                        <ul className="list-group list-group-flush collapse show" style={{color: "white"}}>
+                            {lista.map((l, i) =>{
+                                return <li className="list-group-item bg-dark" key={i}>{l.nombre}</li>
+                                // return l.data
+                            })}
+                        </ul>
+                    </div>
+                </Collapse>
+            </div>
+        )
+    }
+}
+
+export default EditCertificados
