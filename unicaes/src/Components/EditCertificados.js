@@ -121,22 +121,23 @@ class EditCertificados extends React.Component{
                 <form>
                     <div className="container">
                         <div className="container-fluid row d-flex p-3 bd-highlight border border-warning">
-                            <div className="col-sm-3">
+                            <div className="col-5">
                                 <label>fecha:</label>
                               <input type="date" name="fechanacimiento" class="form-control"
                                     id="fecha"
                                 />  
                            </div>
-                            <div className="col-sm-3">
+                            <div className="col-5">
                                 <label>Diplomado: </label>
                                 <br/>
-                                <select id="cmbInstitucion">
+                                <select id="cmbInstitucion" className="form-control">
                                     {instituciones.map((i, j) =>{
                                         return <option value={i.iddiplomadocertificacion} key={j}>{i.nombre}</option>
                                     })}
                                 </select>
                             </div>
-                            <div className="col-sm-3" >
+                            <div className="col-2" >
+                                <br />
                                 <input style={{float: "right"}} className="btn btn-primary" type="button" value="Agregar" onClick={this.handleSubmit}/>
                             </div>
                         </div>

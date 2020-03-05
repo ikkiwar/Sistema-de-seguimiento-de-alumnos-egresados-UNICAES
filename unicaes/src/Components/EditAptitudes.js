@@ -80,9 +80,9 @@ class EditAptitudes extends React.Component{
                 <form>
                     <div className="container">
                         <div className="container-fluid row d-flex p-2 bd-highlight border border-warning">
-                            <div className="col-sm-3">
-                                <label>Aptitud: </label>
-                                <select id="cmbAptitud">
+                            <div className="col-10">
+                                <label>Aptitud: </label><br />
+                                <select id="cmbAptitud" className="form-control">
                                     {
                                     aptitudes.map((i, j) =>{
                                         return <option value={i.idaptitud} key={j}>{i.aptitud}</option>
@@ -90,7 +90,8 @@ class EditAptitudes extends React.Component{
                                     }
                                 </select>
                             </div>
-                            <div className="col-sm-3">
+                            <div className="col-2">
+                            <br />
                                 <input className="btn btn-primary" type="button" value="Agregar" onClick={this.handleSubmit}/>
                             </div>
                         </div>

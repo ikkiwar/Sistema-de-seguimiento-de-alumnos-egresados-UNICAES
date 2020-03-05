@@ -90,16 +90,17 @@ class EditCarreras extends React.Component{
                     <div className="container">
                         <div className="container-fluid row d-flex p-2 bd-highlight
                          border border-warning">
-                            <div className="col-sm-3">
+                            <div className="col-10">
                                 <label>Aptitud: </label>
-                                <select id="cmbCarreras">
+                                <select id="cmbCarreras" className="form-control">
                                     {carreras.map((i, j) =>{
                                         return <option value={i.idcarrera} 
                                         key={j}>{i.carrera}</option>
                                     })}
                                 </select>
                             </div>
-                            <div className="col-sm-3">
+                            <div className="col-2">
+                                <br />
                                 <input className="btn btn-primary" type="button" 
                                 value="Agregar" onClick={this.handleSubmit}/>
                             </div>
