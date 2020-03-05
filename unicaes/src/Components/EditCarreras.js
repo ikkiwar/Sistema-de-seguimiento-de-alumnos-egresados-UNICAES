@@ -15,7 +15,7 @@ class EditCarreras extends React.Component{
     }
 
     componentDidMount(){
-        fetch(`${Api}/carrerasegresado/`,{
+        fetch(`${Api}/carrerasegresado`,{
             method: 'GET'
         })
         .then(res => res.json())
@@ -37,7 +37,7 @@ class EditCarreras extends React.Component{
     }
 
     loadData(){
-        fetch(`${Api}/carrerasegresado/`,{
+        fetch(`${Api}/carrerasegresado`,{
             method: 'GET'
         })
         .then(res => res.json())
@@ -60,13 +60,14 @@ class EditCarreras extends React.Component{
 
     handleSubmit(e){
         let id = document.getElementById('cmbCarreras').value
-        fetch(`${Api}/carrerasegresado/`, {
+        console.log("este es el id:",id)
+        fetch(`${Api}/carrerasegresado`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: {id: id}
+            body: JSON.stringify({idcarrera: id})
         })
         .then(res => res.status)
         .catch(error => console.log(error))

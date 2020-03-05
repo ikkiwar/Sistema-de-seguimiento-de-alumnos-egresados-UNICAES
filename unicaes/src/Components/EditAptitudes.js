@@ -30,7 +30,7 @@ class EditAptitudes extends React.Component{
     }
 
     loadData(){
-        fetch(`${Api}/aptitudesegresado/`,{
+        fetch(`${Api}/aptitudesegresado`,{
             method: 'GET'
         })
         .then(res => res.json())
@@ -53,13 +53,14 @@ class EditAptitudes extends React.Component{
 
     handleSubmit(e){
         let idA = document.getElementById('cmbAptitud').value
-        fetch(`${Api}/aptitudesegresado/`, {
+        console.log("ID apritud", idA)
+        fetch(`${Api}/aptitudesegresado`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({id: idA})
+            body: JSON.stringify({idaptitud: idA})
         })
         .then(res => res.status)
         .catch(error => console.log(error))

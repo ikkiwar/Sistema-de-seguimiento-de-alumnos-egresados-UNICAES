@@ -46,7 +46,7 @@ class EditCertificados extends React.Component{
     }
 
     postInstitucion(data){
-        fetch(`${Api}/diplomasegresado/`, {
+        fetch(`${Api}/diplomasegresado`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -59,7 +59,7 @@ class EditCertificados extends React.Component{
     }
 
     loadInstituciones(){
-        fetch(`${Api}/instituciones`, {
+        fetch(`${Api}/diplomas`, {
             method: 'GET'
         })
         .then(res => res.json())
@@ -81,14 +81,26 @@ class EditCertificados extends React.Component{
     collapse(){ (this.state.isOpened === true) ? this.setState({isOpened: false}) : this.setState({isOpened: true}) }
 
     handleSubmit(e){
-        console.log(`
-            nombre: ${document.getElementById('txtNombre').value}
+        /* console.log(`
+            nombre: ${document.getElementById('fecha').value}
             institucion: ${document.getElementById('cmbInstitucion').value}
             area: ${document.getElementById('cmbArea').value}
-        `);
-        const data = {
+        `); */
+
+        let id = document.getElementById('cmbInstitucion').value
+        let fecha = document.getElementById('fecha').value
+        console.log("este es el id:",id,"fecha", fecha ,JSON.stringify({diplomascertificacion: id , fecha: fecha}) )
+        fetch(`${Api}/diplomasegresado`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({diplomacertificacion: id , fecha: fecha})
             
-        }
+        })
+        .then(res => res.status)
+        .catch(error => console.log(error))
     }
 
     render(){
@@ -107,19 +119,21 @@ class EditCertificados extends React.Component{
                     <div className="container">
                         <div className="container-fluid row d-flex p-2 bd-highlight border border-warning">
                             <div className="col-sm-3">
-                                <label>Nombre:</label>
-                                <input type="text" id="txtNombre" className="form-control" placeholder="Ej. Diplomado en formación docente"/>
-                            </div>
+                                <label>fecha:</label>
+                              <input type="date" name="fechanacimiento" class="form-control"
+                                    id="fecha"
+                                />  
+                           </div>
                             <div className="col-sm-3">
                                 <label>Institucion: </label>
                                 <br/>
                                 <select id="cmbInstitucion">
                                     {instituciones.map((i, j) =>{
-                                        return <option value={i.idinstitucion} key={j}>{i.nombre}</option>
+                                        return <option value={i.iddiplomadocertificacion} key={j}>{i.nombre}</option>
                                     })}
                                 </select>
                             </div>
-                            <div className="col-sm-3">
+                        {/*     <div className="col-sm-3">
                                 <label>Area Laboral: </label>
                                 <br/>
                                 <select id="cmbArea">
@@ -127,7 +141,7 @@ class EditCertificados extends React.Component{
                                         return <option value={i.idArea} key={j}>{i.area}</option>
                                     })}
                                 </select>
-                            </div>
+                            </div> */}
                             <div className="col-sm-3">
                                 <input className="btn btn-primary" type="button" value="Agregar" onClick={this.handleSubmit}/>
                             </div>
