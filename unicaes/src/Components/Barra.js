@@ -50,11 +50,7 @@ class Barra extends React.Component {
         <NavDropdown.Divider />
         <NavDropdown.Item href="/TipodeCarreras">Tipo de Carreras</NavDropdown.Item>
       </NavDropdown>
-      <NavDropdown title="Cuenta" id="basic-nav-dropdown">
-      <NavDropdown.Item href="/Perfil">Mi Perfil</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item href="#" onClick={this.handleOutsesion}>Cerrar sesion</NavDropdown.Item>
-      </NavDropdown>
+      <Nav.Link href="#" onClick={this.handleOutsesion}>Cerrar Sesion</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>

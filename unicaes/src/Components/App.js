@@ -13,6 +13,7 @@ import TipodeCarrera from '../Pages/TipodeCarreras';
 import Perfil from '../Pages/Perfil';
 import EditarPerfil from '../Pages/EditarPerfil';
 import NotFound from '../Pages/Notfound';
+import Administracion from '../Pages/Administracion';
 
 
 
@@ -32,6 +33,7 @@ return(
     <Route exact path="/TipodeCarreras"  component={TipodeCarrera}></Route>
     <Route exact path="/Perfil"  component={Perfil}></Route>
     <Route exact path="/EditarPerfil"  component={EditarPerfil}></Route>
+    <Route exact path="/Administracion"  component={Administracion}></Route>
     <Route component={NotFound} />
 </Switch>
 </BrowserRouter>
