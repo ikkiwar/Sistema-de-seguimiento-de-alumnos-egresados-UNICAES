@@ -6,6 +6,7 @@ class Cards extends React.Component{
      * Props:
      *  tituloBoton : El nombre que recibe el boton
      *  dui: para obtener la informacion del perfil
+     *  editar: para mostrar campos de edicion
      */
     constructor(props){
         super(props)
@@ -26,7 +27,7 @@ class Cards extends React.Component{
     }
 
     loadData(entidad, arreglo){
-        fetch(`${Api}/${entidad}/${this.props.dui}`, {
+        fetch(`${Api}/${entidad}`, {
             method: "GET"
         })
         .then(res => res.json())
@@ -94,22 +95,22 @@ class Cards extends React.Component{
     render(){
         const lista = this.filtrar();
         return( 
-                <div className="card bg-dark" >
-                    <div className="btn btn-primary">
-                        <div className="card-header" aria-expanded="true" onClick={() => this.collapse()}>
-                            {this.props.tituloBoton}
-                        </div>
+            <div className="card bg-dark" >
+                <div className="btn btn-primary">
+                    <div className="card-header" aria-expanded="true" onClick={() => this.collapse()}>
+                        {this.props.tituloBoton}
                     </div>
-                    <Collapse isOpened={this.state.isOpened}>                
-                        <div className="card-body mt-3">
-                            <ul className="list-group list-group-flush collapse show" style={{color: "white"}}>
-                                {lista.map((l, i) =>{
-                                    return l.data
-                                })}
-                            </ul>
-                        </div>
-                    </Collapse>
                 </div>
+                <Collapse isOpened={this.state.isOpened}>
+                    <div className="card-body mt-3">
+                        <ul className="list-group list-group-flush collapse show" style={{color: "white"}}>
+                            {lista.map((l, i) =>{
+                                return l.data
+                            })}
+                        </ul>
+                    </div>
+                </Collapse>
+            </div>
         )
     }
 }
