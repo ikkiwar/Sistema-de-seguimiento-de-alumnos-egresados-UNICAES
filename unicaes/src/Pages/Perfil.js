@@ -28,7 +28,7 @@ class Perfil extends React.Component{
                 <style>{'body { background-color: #9E2723; }'}</style>
                 <BarraPerfil/>
                 <div className='container pt-4'>
-                    <HPerfil/>
+                    <HPerfil loguser={this.state.loguser}/>
                 </div>
                 <div className="container pt-4">
                     <div className="container-fluid row">
