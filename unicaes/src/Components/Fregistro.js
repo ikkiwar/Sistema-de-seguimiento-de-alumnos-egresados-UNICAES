@@ -30,7 +30,7 @@ class Fregistro extends React.Component {
         } catch (error) {
 
         }
-
+        setTimeout(console.log("Cerrando"), 4000);
         window.location.replace('');
 
     }
@@ -122,11 +122,12 @@ class Fregistro extends React.Component {
                                 <label for="foto">Foto:</label>
                             </div>
                             <div class="col-8" >
-                                <input type="text" name="foto" class="form-control"
-                                    onChange={this.handleChange}
-                                    value={this.state.foto}
-
-                                />
+                            <input type="file" class="form-control-file"
+                             id="exampleFormControlFile1"
+                             name="foto"
+                             onChange={this.handleChange}
+                             value={this.state.foto}
+                            />
                             </div>
                         </div>
                         <br/>
