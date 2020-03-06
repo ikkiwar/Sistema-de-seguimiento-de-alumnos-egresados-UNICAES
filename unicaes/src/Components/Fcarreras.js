@@ -43,7 +43,7 @@ class Fcarreras extends React.Component {
 
     handleSubmit = async e => {
         e.preventDefault()
-        console.log(this.state)
+        console.log(" Estado: ",this.state)
 
 
         try {
@@ -67,7 +67,9 @@ class Fcarreras extends React.Component {
 
         }
 
-         window.location.replace('');
+        setTimeout(()=>{
+            window.location.replace('')
+        }, 3000);
 
     }
 

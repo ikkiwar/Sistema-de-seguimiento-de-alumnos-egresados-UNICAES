@@ -64,6 +64,11 @@ class EditAptitudes extends React.Component{
         })
         .then(res => res.status)
         .catch(error => console.log(error))
+
+        setTimeout(()=>{
+            window.location.replace('/Perfil')
+        }, 3000);
+       // window.location.replace('/Perfil');
     }
 
     render(){
@@ -81,7 +86,7 @@ class EditAptitudes extends React.Component{
                     <div className="container">
                         <div className="container-fluid row d-flex p-2 bd-highlight border border-warning">
                             <div className="col-10">
-                                <label>Aptitud: </label><br />
+                                <label  style={{color: "white"}}>Aptitud: </label><br />
                                 <select id="cmbAptitud" className="form-control">
                                     {
                                     aptitudes.map((i, j) =>{

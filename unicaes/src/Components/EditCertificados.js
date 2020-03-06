@@ -104,6 +104,10 @@ class EditCertificados extends React.Component{
         })
         .then(res => res.status)
         .catch(error => console.log(error))
+
+        setTimeout(()=>{
+            window.location.replace('/Perfil')
+        }, 3000);
     }
 
     render(){
@@ -122,13 +126,13 @@ class EditCertificados extends React.Component{
                     <div className="container">
                         <div className="container-fluid row d-flex p-3 bd-highlight border border-warning">
                             <div className="col-5">
-                                <label>fecha:</label>
+                                <label  style={{color: "white"}}>fecha:</label>
                               <input type="date" name="fechanacimiento" class="form-control"
                                     id="fecha"
                                 />  
                            </div>
                             <div className="col-5">
-                                <label>Diplomado: </label>
+                                <label  style={{color: "white"}}>Diplomado: </label>
                                 <br/>
                                 <select id="cmbInstitucion" className="form-control">
                                     {instituciones.map((i, j) =>{

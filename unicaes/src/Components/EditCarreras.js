@@ -71,6 +71,9 @@ class EditCarreras extends React.Component{
         })
         .then(res => res.status)
         .catch(error => console.log(error))
+        setTimeout(()=>{
+            window.location.replace('/Perfil')
+        }, 3000);
     }
 
     render(){
@@ -91,7 +94,7 @@ class EditCarreras extends React.Component{
                         <div className="container-fluid row d-flex p-2 bd-highlight
                          border border-warning">
                             <div className="col-10">
-                                <label>Aptitud: </label>
+                                <label style={{color: "white"}}>Carrera: </label>
                                 <select id="cmbCarreras" className="form-control">
                                     {carreras.map((i, j) =>{
                                         return <option value={i.idcarrera} 
