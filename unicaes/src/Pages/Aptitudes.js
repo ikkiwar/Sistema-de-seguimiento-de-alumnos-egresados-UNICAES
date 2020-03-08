@@ -14,7 +14,9 @@ class Aptitudes extends React.Component{
          })
          .then(response => response.json());
         
-       
+         setTimeout(()=>{
+            window.location.replace('')
+        }, 3000);
    }
 
     render(){

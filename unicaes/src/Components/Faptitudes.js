@@ -30,7 +30,9 @@ class Faptitudes extends React.Component{
             
         }
 
-        window.location.replace('');
+        setTimeout(()=>{
+            window.location.replace('')
+        }, 3000);
 
     }
 

@@ -12,6 +12,9 @@ class Instituciones extends React.Component{
            method: 'DELETE'
          })
          .then(response => response.json());
+         setTimeout(()=>{
+            window.location.replace('')
+        }, 3000);
          
    }
 

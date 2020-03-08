@@ -30,8 +30,8 @@ class Fregistro extends React.Component {
         } catch (error) {
 
         }
-
-        window.location.replace('');
+        //setTimeout(console.log("Cerrando"), 4000);
+        //window.location.replace('');
 
     }
 
@@ -117,18 +117,6 @@ class Fregistro extends React.Component {
                                 /><br />
                             </div>
                         </div>
-                        <div class="row" >
-                            <div class="col-3" >
-                                <label for="foto">Foto:</label>
-                            </div>
-                            <div class="col-8" >
-                                <input type="text" name="foto" class="form-control"
-                                    onChange={this.handleChange}
-                                    value={this.state.foto}
-
-                                />
-                            </div>
-                        </div>
                         <br/>
                         <div class="row">
                             <div class="col-3">
@@ -170,7 +158,7 @@ class Fregistro extends React.Component {
                             <div class="col-8">
                                 <input type="date" name="fechanacimiento" class="form-control"
                                     onChange={this.handleChange}
-                                    value={this.state.feachanacimiento}
+                                    value={this.state.fechanacimiento}
                                 /><br />
                             </div>
                         </div>
@@ -184,6 +172,7 @@ class Fregistro extends React.Component {
                                     onChange={this.handleChange}
                                     value={this.state.sexo}
                                 >
+                                    <option value="X">Indefinido</option>
                                     <option value="F">F</option>
                                     <option value="M">M</option>
                                 </select>

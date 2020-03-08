@@ -1,7 +1,6 @@
 import React from 'react';
 import "./Styles/Loginform.css";
 import Api from '../Api';
-import { Redirect } from 'react-router-dom';
 import { Alert } from 'react-bootstrap';
 
 class Loginform extends React.Component {
@@ -26,13 +25,23 @@ class Loginform extends React.Component {
             }
 
             let res = await fetch(`${Api}${this.props.entidad}`, confing)
-            let json = await res.json()
-
+            let json = await res.text()
+            console.log(json)
             console.log(res.status)
             if (res.status == 200 ) {
                 console.log("Ingreso")
+                
+                if(json === 'Administrador'){
+
+                    console.log(" Logeado como adminitrador ")
+                    window.location.replace("/Administracion");
+                }
+                else if (json === 'Egresado'){
+                    console.log(" Logeado como Egresado ")
+                    window.location.replace("/Perfil");
+                }
             
-                window.location.replace("/Perfil");
+               // window.location.replace("/Perfil");
             } else {
                 console.log("algo salio mal")
                alert("¡Usuario o Contraseña incorrectos!")

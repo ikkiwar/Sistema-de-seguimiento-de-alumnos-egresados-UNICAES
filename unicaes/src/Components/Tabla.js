@@ -3,7 +3,6 @@ import ReactTable from "react-table";
 import 'react-table/react-table.css';
 import '../Components/Styles/Tabla.css';
 import Api from '../Api';
-import Notfound from '../Pages/Notfound';
 
 class Tabla extends React.Component {
   /**
@@ -26,7 +25,8 @@ class Tabla extends React.Component {
       // aqui le pasamos el URL y la entidad que vamos a comsumir
       method: "GET"
     })
-      .then(Response => Response.json().then(data => ({ status: Response.status, body: data }))
+      .then(Response => Response.json().then(data => ({ status: Response.status, 
+        body: data }))
       )
       .then(posts => {
         console.log(posts)

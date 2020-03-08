@@ -1,0 +1,22 @@
+.panel {
+    position: relative;
+    background-color: #641E16;
+    height: 300px;
+    width: 500px;
+    padding: 30px;
+    padding-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px #000;
+    top: 80px;
+    left: 440px;
+
+}
+
+.contenedor{
+text-align: center;
+color: white;
+}
+
+.contenido{
+    float: none;
+}

@@ -34,7 +34,7 @@ class Carreras extends React.Component {
             {
                 Header: "Tipo",
                 accessor: "tipocarrera"
-            },
+            }/* ,
             {
                 Header: "Acciones",
                 Cell: props => {
@@ -58,7 +58,7 @@ class Carreras extends React.Component {
                   minWidth: 100,
                   filterable: false,
                   sortable: false
-            }
+            } */
 
 
         ]
