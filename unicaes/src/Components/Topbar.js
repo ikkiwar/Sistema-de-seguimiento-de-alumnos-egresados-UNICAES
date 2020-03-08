@@ -18,8 +18,8 @@ class Topbar extends React.Component {
         
         <div className = "unirse">
          
-            <a href= "https://www.catolica.edu.sv/" 
-            class="btn btn-outline-warning"> Pagina Principal </a>
+            <a href= "/Buscador" 
+            class="btn btn-outline-warning"> Buscar Profesionales </a>
             
         </div>
 

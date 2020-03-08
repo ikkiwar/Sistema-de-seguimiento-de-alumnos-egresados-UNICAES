@@ -13,8 +13,7 @@ class BarraUsuario extends React.Component{
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
       <Nav.Link href="/Login">Pagina Principal</Nav.Link>
-      <Nav.Link href="/Perfil">Mi Perfil</Nav.Link>
-      <Nav.Link href="/Login">Cerrar Sesión</Nav.Link>
+      <Nav.Link href="/Buscador">Buscador</Nav.Link>
     </Nav>
   </Navbar.Collapse>
 </Navbar>
