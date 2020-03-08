@@ -5,8 +5,8 @@ import HPerfil from "../Components/HPerfil";
 import EditCertificados from "../Components/EditCertificados";
 import EditAptitudes from "../Components/EditAptitudes";
 import EditCarreras from "../Components/EditCarreras";
-import Cards from "../Components/Cards";
 import Api from "../Api";
+import EditExperiencia from '../Components/EditExperiencia';
 class EditarPerfil extends React.Component{
     constructor(props){
         super(props)
@@ -38,7 +38,7 @@ class EditarPerfil extends React.Component{
                         <div className="col-12"><EditCarreras tituloBoton="Carreras"/></div>
                         <div className="col-12"><EditCertificados tituloBoton="Diplomas/Certificados" /></div>
                         <div className="col-12"><EditAptitudes tituloBoton="Aptitudes"/></div>
-                        <div className="col-12"><Cards tituloBoton="Experiencia Laboral"/></div>
+                        <div className="col-12"><EditExperiencia tituloBoton="Experiencia Laboral"/></div>
                     </div>
                 </div>
             </div>
