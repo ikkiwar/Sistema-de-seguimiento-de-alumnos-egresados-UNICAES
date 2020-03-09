@@ -3,8 +3,22 @@ import Tabla from '../Components/Tabla';
 import { Button } from 'react-bootstrap';
 import '../Components/Styles/Buscador.css';
 import BarraUsuario from '../Components/BarraUsuario';
+import {Link} from 'react-router-dom';
+
+
 
 class Buscador extends React.Component {
+
+
+   /*  handlePerfilPublico = (dui) => {
+        console.log("dui",dui)
+     return  (
+         this.render = () =>{
+             return(<PerfiPublico dui={dui}/>)
+         }
+     ) 
+        
+    } */
 
     render() {
 
@@ -28,16 +42,12 @@ class Buscador extends React.Component {
                 Header: "Acciones",
                 Cell: props => {
                     return (
-                        <Button variant="info"
-                            onClick={() => {
-                                // console.log("datos:", props)
-                                //  this.deleteRow(props.original.idaptitud);
+                      
 
-                            }
-
-                            }
-                            id={this.idcargo}
-                        >Ver Perfil</Button>
+                        <Link className="btn btn-warning" to={{
+                            pathname: "/PerfilPublico",
+                            dui: props.original.dui
+                        }}  >Ver Perfil</Link>
 
 
                     )
@@ -55,13 +65,13 @@ class Buscador extends React.Component {
         return (
             <div className="buscador">
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <BarraUsuario/>
-                <br/>
-                <h1>Buscador de Profesionales </h1>
+                <BarraUsuario />
+                <br />
+                <h1>Buscador de Profesionales </h1>                
                 <div className="Btabla">
-                <Tabla columnas={encabezado} entidad="/egresados" />
+                    <Tabla columnas={encabezado} entidad="/egresados" />
                 </div>
-                
+
             </div>
         )
     }

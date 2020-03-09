@@ -34,6 +34,8 @@ handleOutsesion(){
     <Nav className="mr-auto">
       <Nav.Link href="/Login">Pagina Principal</Nav.Link>
       <NavDropdown title="Pefil" id="basic-nav-dropdown">
+      <NavDropdown.Item href="/Perfil">Perfil</NavDropdown.Item>
+        <NavDropdown.Divider />
         <NavDropdown.Item href="/EditarPerfil">Editar Perfil</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#" onClick={this.handleOutsesion}> Cerrar Sesion</NavDropdown.Item>

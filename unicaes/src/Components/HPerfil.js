@@ -14,7 +14,9 @@ class HPerfil extends React.Component {
     }
 
     componentDidMount() {
-        fetch(`${Api}/perfil`, {
+        console.log(" Valor de logeo",this.props.loguser)
+
+        fetch(`${Api}${this.props.entidad}${this.props.loguser}`, {
             method: "GET"
         })
             .then(Response => Response.json())

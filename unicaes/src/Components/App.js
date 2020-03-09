@@ -15,6 +15,7 @@ import EditarPerfil from '../Pages/EditarPerfil';
 import NotFound from '../Pages/Notfound';
 import Administracion from '../Pages/Administracion';
 import Buscador from '../Pages/Buscador';
+import PerfilPublico from '../Pages/PerfilPublico';
 
 
 
@@ -36,6 +37,7 @@ return(
     <Route exact path="/EditarPerfil"  component={EditarPerfil}></Route>
     <Route exact path="/Administracion"  component={Administracion}></Route>
     <Route exact path="/Buscador"  component={Buscador}></Route>
+    <Route exact path="/PerfilPublico"  component={PerfilPublico}></Route>
     <Route component={NotFound} />
 </Switch>
 </BrowserRouter>

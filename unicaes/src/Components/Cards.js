@@ -20,10 +20,10 @@ class Cards extends React.Component{
     }
 
     componentDidMount(){
-        this.loadData("carrerasegresado", "carreras")
-        this.loadData("diplomasegresado", "diplomas")
-        this.loadData("aptitudesegresado", "aptitudes")
-        this.loadData("experiencialaboral", "experiencia")
+        this.loadData(`${this.props.entidadcarreras}${this.props.user}`, "carreras")
+        this.loadData(`${this.props.entidaddiploma}${this.props.user}`, "diplomas")
+        this.loadData(`${this.props.entidadaptitudes}${this.props.user}`, "aptitudes")
+        this.loadData(`${this.props.entidadexperiencia}${this.props.user}`, "experiencia")
     }
 
     loadData(entidad, arreglo){

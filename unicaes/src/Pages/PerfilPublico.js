@@ -1,17 +1,17 @@
 import React from 'react';
-import BarraPerfil from '../Components/BarraPerfil';
+import BarraUsuario from '../Components/BarraUsuario';
 import HPerfil from "../Components/HPerfil";
 import Cards from "../Components/Cards";
 import Api from "../Api";
-class Perfil extends React.Component{
+class PerfilPublico extends React.Component{
     constructor(props){
         super(props)
         this.state={
-            loguser: ''
+            loguser: this.props.dui
         }
     }
 
-    componentDidMount(){
+   /*  componentDidMount(){
             fetch(`${Api}/logsesion`, {
                 method: 'GET'
             })
@@ -19,27 +19,27 @@ class Perfil extends React.Component{
             .then(res => {
                 this.setState({loguser: res.loguser})
             })
-    }
+    } */
 
     render(){
-        console.log(this.state.loguser);
+        console.log("usuario: ",this.props.location.dui);
         return(
             <div>
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <BarraPerfil/>
+                <BarraUsuario/>
                 <div className='container pt-4'>
-                    <HPerfil entidad="/perfil" loguser={this.state.loguser} />
+                    <HPerfil entidad="/perfil/" loguser={this.props.location.dui}/>
                 </div>
                 <div className="container pt-4">
                     <div className="container-fluid row">
                         <div className="col-12"><Cards tituloBoton="Carreras"
-                         entidadcarreras="carrerasegresado" user={this.state.loguser}/></div>
+                         entidadcarreras="carrerasegresado" user={`/${this.props.location.dui}`}/></div>
                         <div className="col-12"><Cards tituloBoton="Diplomas/Certificados" 
-                        entidaddiploma="diplomasegresado" user={this.state.loguser}/></div>
+                        entidaddiploma="diplomasegresado" user={`/${this.props.location.dui}`}/></div>
                         <div className="col-12"><Cards tituloBoton="Aptitudes"
-                        entidadaptitudes="aptitudesegresado" user={this.state.loguser}/></div>
+                        entidadaptitudes="aptitudesegresado" user={`/${this.props.location.dui}`}/></div>
                         <div className="col-12"><Cards tituloBoton="Experiencia Laboral"
-                        entidadexperiencia="experiencialaboral" user={this.state.loguser}/></div>
+                        entidadexperiencia="experiencialaboral" user={`/${this.props.location.dui}`}/></div>
                     </div>
                 </div>
             </div>
@@ -48,4 +48,4 @@ class Perfil extends React.Component{
     
 
 }
-export default Perfil;
+export default PerfilPublico;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BarraUsuario from '../Components/BarraUsuario';
+import BarraPerfil from '../Components/BarraPerfil';
 import HPerfil from "../Components/HPerfil";
 import EditCertificados from "../Components/EditCertificados";
 import EditAptitudes from "../Components/EditAptitudes";
@@ -29,7 +29,7 @@ class EditarPerfil extends React.Component{
         return(
             <div>
                 <style>{'body { background-color: #9E2723; }'}</style>
-                <BarraUsuario/>
+                <BarraPerfil/>
                 <div className='container pt-4'>
                     <HPerfil/>
                 </div>
