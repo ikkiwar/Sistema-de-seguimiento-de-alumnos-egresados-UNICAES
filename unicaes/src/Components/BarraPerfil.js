@@ -41,6 +41,7 @@ handleOutsesion(){
         <NavDropdown.Item href="#" onClick={this.handleOutsesion}> Cerrar Sesion</NavDropdown.Item>
       </NavDropdown>
     </Nav>
+    <Nav.Link className="btn btn-outline-warning" href="/Buscador">Buscar Profesionales</Nav.Link>
   </Navbar.Collapse>
 </Navbar>
             </div>

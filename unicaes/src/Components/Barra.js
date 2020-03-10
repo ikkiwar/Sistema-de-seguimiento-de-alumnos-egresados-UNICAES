@@ -52,6 +52,7 @@ class Barra extends React.Component {
       </NavDropdown>
       <Nav.Link href="#" onClick={this.handleOutsesion}>Cerrar Sesion</Nav.Link>
     </Nav>
+    <Nav.Link className="btn btn-outline-warning" href="/Buscador">Buscar Profesionales</Nav.Link>
   </Navbar.Collapse>
 </Navbar>
             </div>
