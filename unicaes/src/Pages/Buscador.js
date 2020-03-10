@@ -44,10 +44,14 @@ class Buscador extends React.Component {
                     return (
                       
 
-                        <Link className="btn btn-warning" to={{
-                            pathname: "/PerfilPublico",
-                            dui: props.original.dui
-                        }}  >Ver Perfil</Link>
+                        // 
+                        // <Link className="btn btn-warning" href={{
+                        //     pathname: "/PerfilPublico?dui="+props.original.dui,
+                        //     dui: props.original.dui
+                        // }}  >Ver Perfil</Link>
+                        // 
+
+                        <a className="btn btn-warning" href={'/PerfilPublico?dui='+props.original.dui}>Ver Perfil</a>
 
 
                     )
